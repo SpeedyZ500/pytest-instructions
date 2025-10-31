@@ -5,7 +5,7 @@ Make sure you have the Pytest extension installed.
 
 ## 1 Creating and using a Virtual Environment
 
-**If you already have a virtual Environment set up with pytest you can skip to section 2**
+**If you already have a virtual Environment set up you can skip to section 2**
 
 ### 1.1 Setup
 To set up a virtual environment on PC use 
