@@ -57,20 +57,18 @@ class TestScoreKeeper:
     score_obj = ScoreKeeper()
     def test_show_class_effects_1(self):
         #Given
-        score = self.score_obj
         points_to_add = 7
         expected = 7
         #then
-        result = score.add_points(points_to_add)
+        result = self.score_obj.add_points(points_to_add)
         assert result == expected
-        assert score.total_score == expected
+        assert self.score_obj.total_score == expected
 
     def test_show_class_effects_2(self):
         #Given
-        score = self.score_obj
         points_to_add = 8
         expected = 8
         #then
-        result = score.add_points(points_to_add)
+        result = self.score_obj.add_points(points_to_add)
         assert result == expected
-        assert score.total_score == expected
+        assert self.score_obj.total_score == expected
