@@ -71,17 +71,17 @@ The file extension for your test file should be ```.py```, because it is a pytho
 When testing a class there are additional things you should be testing other than simply the returned data. 
 These are the **Side effects**, the contents of the class that is changed by the function being tested.
 
-## 6 Test Class
-
-There are ways to group tests together, this is particularly useful when testing related methods.
+## 6 Using Fixtures
 
 
 
-## 7 Using Fixtures
+## 7 Test Class
+
+There are ways to group tests together, this is particularly useful when testing related methods. 
+However class variables are also shared between tests of the same class, so you must once again use fixtures to prevent side effects and inconsistent testing.
+
 
 
 
 ## 8 Parameterizing Tests
-
-
 
