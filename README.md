@@ -1,7 +1,9 @@
-# pytest-instructions
+# Pytest Demo Instructions
 
-This project assumes that you have VS Code installed already. 
-Make sure you have the Pytest extension installed.
+## Introduction
+
+This instructional demo is designed to guide a user through getting started with the Python testing library `pytest`, writing different types of unit tests, and providing the user with next steps on practing creating tests with `pytest`.
+
 ## Table of Contents
 - [0. Creating and using a Virtual Environment](#0-creating-and-using-a-virtual-environment)
   - [0.1 Setup](#01-setup)
@@ -10,6 +12,9 @@ Make sure you have the Pytest extension installed.
 - [2 Creating a Test File](#2-creating-a-test-file)
 
 ## 0 Creating and using a Virtual Environment
+
+This project assumes that you have VS Code installed already. 
+Make sure you have the Pytest extension installed.
 
 **If you already have a virtual Environment set up you can skip to section 1**
 
