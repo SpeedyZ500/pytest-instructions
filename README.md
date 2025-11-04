@@ -71,10 +71,13 @@ The file extension for your test file should be ```.py```, because it is a pytho
 
 
 
+
+
 ## 5 Testing Classes
 
 When testing a class there are additional things you should be testing other than simply the returned data. 
 These are the **Side effects**, the contents of the class that is changed by the function being tested.
+Therefore it is important to test that the attributes change as you expect them to.
 
 ## 6 Using Fixtures
 
