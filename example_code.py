@@ -8,6 +8,11 @@ def add_a_and_b(a, b):
         raise TypeError("must be a numeric value")
     return a + b
 
+def same_signs(a: int|float, b: int|float) -> bool:
+    if not isinstance(a, int|float) or not isinstance(b, int|float):
+        raise TypeError("must be a numeric value")
+    return (a < 0 and b < 0) or (a >= 0 and b >=0)
+
 class PriorityQueue(ABC, Generic[T]):
     """
     Abstract class priority queue, has all functions that a priority queue requires, so that they must be implemented
@@ -69,7 +74,7 @@ class BinaryHeapPQ(PriorityQueue[T]):
 
         
     def _parent(self, index:int) -> int:
-        return (index -1) // 2
+        return (index-1) // 2
     def _left(self, index:int) -> int:
         return(index * 2) + 1
     def _right(self, index:int) -> int:

@@ -168,3 +168,5 @@ using TestClasses can be a good way to group the positive and negative test case
 
 You may need to test several functions that are similar, perhaps they are two children of the same abstract class, which should preform the same operation, but in different ways. Or perhaps you have many functions that have similar data requirements, just slightly different parameters are required. Parameterizing tests can be used in both of these cases. This is also useful when you want to make sure that it works for a variety of inputs, allowing for the testing of edge cases.
 It is also possible to parameterize Fixtures, and it will behave in much the same way.
+
+For practice you could write tests for the PriorityQueue test class, using parameterization, and debugging to figure out why the HeapPQ fails a test that LinearPQ passes.
