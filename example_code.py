@@ -1,6 +1,8 @@
 from typing import Collection
 from abc import ABC, abstractmethod
 from typing import Generic, TypeVar
+from itertools import count
+
 T = TypeVar('T')
 
 def add_a_and_b(a, b):
@@ -51,10 +53,11 @@ class BinaryHeapPQ(PriorityQueue[T]):
         __data(list[tuple[T, float]]) the queue, allows us to store data
 
     """
-    __slots__ = ["__index","__data"]
+    __slots__ = ["__index","__data","__counter"]
     def __init__(self)-> None:
         self.__index:dict[T, int] = {}
-        self.__data:list[tuple[T, float]] = []
+        self.__data:list[tuple[float, int, T]] = []
+        self.__counter:count = count()
     
     def build_queue(self, data:dict[T, float]) -> None:
         if not isinstance(data, dict):
@@ -82,7 +85,7 @@ class BinaryHeapPQ(PriorityQueue[T]):
     
     def _bubble_up(self, index:int) -> None:
         parent: int = self._parent(index)
-        while index > 0 and self.__data[index][1] < self.__data[parent][1]:
+        while index > 0 and self.__data[index] < self.__data[parent]:
             self._swap(index, parent)
             index = parent
             parent = self._parent(index)
@@ -90,14 +93,15 @@ class BinaryHeapPQ(PriorityQueue[T]):
     
     def insert(self, key:T, priority:float) -> None:
         self.__index[key] = len(self.__data)
-        self.__data.append((key, priority))
+        self.__data.append((priority, next(self.__counter), key))
         self._bubble_up(self.__index[key])
 
     def decrease_key(self, key:T, priority:float) -> None:
        
         if key not in self.__index.keys():
             raise ValueError
-        self.__data[self.__index[key]] = (key, priority)
+        _, order, _ = self.__data[self.__index[key]]
+        self.__data[self.__index[key]] = (priority, order, key)
         self._bubble_up(self.__index[key])
 
     def _bubble_down(self, i:int) -> None:
@@ -105,9 +109,9 @@ class BinaryHeapPQ(PriorityQueue[T]):
         while True:
             min_i:int = i
             l, r = self._left(i), self._right(i)  
-            if l < n and self.__data[l][1] < self.__data[min_i][1]:
+            if l < n and self.__data[l] < self.__data[min_i]:
                 min_i = l
-            if r < n and self.__data[r][1] < self.__data[min_i][1]:
+            if r < n and self.__data[r] < self.__data[min_i]:
                 min_i = r
             if min_i == i:
                 break
@@ -115,7 +119,7 @@ class BinaryHeapPQ(PriorityQueue[T]):
             i = min_i
 
     def delete_min(self) -> T:
-        min_key, _ = self.__data[0]
+        _, _, min_key = self.__data[0]
         last:tuple[T, float] = self.__data.pop()
         self.__index.pop(min_key)
         if self.__data:
