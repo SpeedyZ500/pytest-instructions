@@ -52,6 +52,8 @@ class BinaryHeapPQ(PriorityQueue[T]):
         self.__data:list[tuple[T, float]] = []
     
     def build_queue(self, data:dict[T, float]) -> None:
+        if not isinstance(data, dict):
+            raise TypeError
         for key, priority in data.items():
             self.insert(key, priority)
     
@@ -67,7 +69,7 @@ class BinaryHeapPQ(PriorityQueue[T]):
 
         
     def _parent(self, index:int) -> int:
-        return (index - 1) // 2
+        return (index -1) // 2
     def _left(self, index:int) -> int:
         return(index * 2) + 1
     def _right(self, index:int) -> int:
@@ -87,6 +89,9 @@ class BinaryHeapPQ(PriorityQueue[T]):
         self._bubble_up(self.__index[key])
 
     def decrease_key(self, key:T, priority:float) -> None:
+       
+        if key not in self.__index.keys():
+            raise ValueError
         self.__data[self.__index[key]] = (key, priority)
         self._bubble_up(self.__index[key])
 
@@ -139,11 +144,15 @@ class LinearPQ(PriorityQueue[T]):
         self.__data:dict[T, float] = {}
     
     def build_queue(self, data:dict[T, float]) -> None:
+        if not isinstance(data, dict):
+            raise TypeError
         self.__data.update(data)
 
     def insert(self, key:T, priority:float) -> None:
         self.__data[key] = priority
     def decrease_key(self, key:T, priority:float) -> None:
+        if key not in self.__index.keys():
+            raise ValueError
         self.__data[key] = priority
     def delete_min(self) -> T:
         min_key:T = list(self.__data.keys())[0]
@@ -152,8 +161,6 @@ class LinearPQ(PriorityQueue[T]):
             if min_value > cur_value:
                 min_value - cur_value
                 min_key = cur_key
-
-
         self.__data.pop(min_key)
         return min_key
     def __len__(self) -> int:

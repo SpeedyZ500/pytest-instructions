@@ -5,6 +5,7 @@
 This instructional demo is designed to guide a user through getting started with the Python testing library `pytest`, writing different types of unit tests, and providing the user with next steps on practing creating tests with `pytest`.
 
 ## Table of Contents
+
 - [0. Creating and using a Virtual Environment](#0-creating-and-using-a-virtual-environment)
   - [0.1 Setup](#01-setup)
   - [0.2 Activating a Virtual Environment](#02-activating-a-virtual-environment)
@@ -16,29 +17,37 @@ This instructional demo is designed to guide a user through getting started with
 This project assumes that you have VS Code installed already. 
 Make sure you have the Pytest extension installed.
 
-**If you already have a virtual Environment set up you can skip to section 1**
+>[!NOTE]
+>**If you already have a virtual Environment set up you can skip to section 1**
 
 ### 0.1 Setup
+
 To set up a virtual environment on PC use 
 
 ```bash
 python -m venv .venv
 ```
+
 and if on a Mac or a computer configured to use Linux then you should type
+
 ```bash
 python3 -m venv .venv
 ```
+
 This creates a hidden directory called `.venv` in your project folder containing a standalone Python environment.
 
 ### 0.2 Activating a virtual environment
+
 You now have to tell VSCode that you want to use the virtual environment. This is called _activating_ the environment. How you activate `venv` depends on your machine.
 
 For a Windows machine running PowerShell,
+
 ```powershell
 venv\Scripts\Activate.ps1
 ```
 
 and on a Mac or Linux-based machine
+
 ```bash
 source .venv/bin/activate
 ```
@@ -60,18 +69,14 @@ pip3 install pytest
 ## 2 Creating a test file
 
 To create a test file, you must follow a specific naming scheme. it must begin with ```test_``` or end with ```_test```.
-The file extension for your test file should be ```.py```, because it is a python file. 
-**The Test file must be separate from your code file.** For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
+The file extension for your test file should be ```.py```, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
+
+> [!WARNING]
+> **The Test file must be separate from your code file.**
 
 ## 3 Writing a Basic Positive Test
 
-
-
 ## 4 Writing a Basic Negative Test
-
-
-
-
 
 ## 5 Testing Classes
 
@@ -81,8 +86,6 @@ Therefore it is important to test that the attributes change as you expect them 
 
 ## 6 Using Fixtures
 
-
-
 ## 7 Test Class
 
 There are ways to group tests together, this is particularly useful when testing related methods. 
@@ -90,6 +93,7 @@ However class attributes are also shared between tests of the same class, so you
 Instance attributes are not shared between tests, so they can be overwritten without fear.
 
 This is fine
+
 ```py
 class TestClassExample:
     value = 1
@@ -160,7 +164,7 @@ class TestAddAB:
 
 using TestClasses can be a good way to group the positive and negative test cases for functions together.
 
-
-
 ## 8 Parameterizing Tests
 
+You may need to test several functions that are similar, perhaps they are two children of the same abstract class, which should preform the same operation, but in different ways. Or perhaps you have many functions that have similar data requirements, just slightly different parameters are required. Parameterizing tests can be used in both of these cases. This is also useful when you want to make sure that it works for a variety of inputs, allowing for the testing of edge cases.
+It is also possible to parameterize Fixtures, and it will behave in much the same way.
