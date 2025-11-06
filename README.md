@@ -9,25 +9,29 @@ This instruction will guide you through step-by-step instructions of writing `py
 - [Pytest Demo Instructions](#pytest-demo-instructions)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
-  - [0 Creating and using a Virtual Environment](#0-creating-and-using-a-virtual-environment)
+  - [Prerequisites](#prerequisites)
+  - [0 Create a Virtual Environment](#0-create-a-virtual-environment)
     - [0.1 Setup](#01-setup)
-    - [0.2 Activating a virtual environment](#02-activating-a-virtual-environment)
-  - [1 Installing Pytest](#1-installing-pytest)
-  - [2 Creating a test file](#2-creating-a-test-file)
-  - [3 Writing a Basic Positive Test](#3-writing-a-basic-positive-test)
-  - [4 Writing a Basic Negative Test](#4-writing-a-basic-negative-test)
-  - [5 Testing Classes](#5-testing-classes)
-  - [6 Using Fixtures](#6-using-fixtures)
-  - [7 Test Class](#7-test-class)
-    - [7.1 Writing a Test Class](#71-writing-a-test-class)
-    - [7.2 Writing Tests within a class](#72-writing-tests-within-a-class)
-  - [8 Parameterizing Tests](#8-parameterizing-tests)
+    - [0.2 Activate your Virtual Environment](#02-activate-your-virtual-environment)
+  - [1 Install Pytest](#1-install-pytest)
+  - [2 Create a Test File](#2-create-a-test-file)
+  - [3 Write a Positive Test](#3-write-a-positive-test)
+  - [4 Write a Negative Test](#4-write-a-negative-test)
+  - [5 Test Classes](#5-test-classes)
+  - [6 Add Fixtures](#6-add-fixtures)
+  - [7 Test Classes](#7-test-classes)
+    - [7.1 Write a Test Class](#71-write-a-test-class)
+    - [7.2 Write Tests Within a Class](#72-write-tests-within-a-class)
+  - [8 Parameterize Tests](#8-parameterize-tests)
   - [9 ✍️ Practice](#9-️-practice)
 
-## 0 Creating and using a Virtual Environment
+## Prerequisites
 
-This project assumes that you have VS Code installed already.
-Make sure you have the Pytest extension installed.
+For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed. This extension comes with support for integrading the IDE with the `pytest` framework.
+
+## 0 Create a Virtual Environment
+
+We will be using a virtual environment to ensure consistent Python behavior across operating systems.
 
 >[!NOTE]
 >**If you already have a virtual Environment set up you can skip to section 1**
@@ -48,7 +52,7 @@ python3 -m venv .venv
 
 This creates a hidden directory called `.venv` in your project folder containing a standalone Python environment.
 
-### 0.2 Activating a virtual environment
+### 0.2 Activate your Virtual Environment
 
 You now have to tell VSCode that you want to use the virtual environment. This is called _activating_ the environment. How you activate `venv` depends on your machine.
 
@@ -64,7 +68,7 @@ and on a Mac or Linux-based machine
 source .venv/bin/activate
 ```
 
-## 1 Installing Pytest
+## 1 Install Pytest
 
 In your virtual environment, type the command on Windows:
 
@@ -78,27 +82,27 @@ For MacOS and Linux:
 pip3 install pytest
 ```
 
-## 2 Creating a test file
+## 2 Create a Test File
 
-To create a test file, you must follow a specific naming scheme. it must begin with ```test_``` or end with ```_test```.
-The file extension for your test file should be ```.py```, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
+To create a test file, you must follow a specific naming scheme. it must begin with `test_` or end with `_test`.
+The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
 > [!WARNING]
 > **The Test file must be separate from your code file.**
 
-## 3 Writing a Basic Positive Test
+## 3 Write a Positive Test
 
-## 4 Writing a Basic Negative Test
+## 4 Write a Negative Test
 
-## 5 Testing Classes
+## 5 Test Classes
 
 When testing a class there are additional things you should be testing other than simply the returned data.
-These are the **Side effects**, the contents of the class that is changed by the function being tested.
+These are the **Side effects**; the contents of the class that is changed by the function being tested.
 Therefore it is important to test that the attributes change as you expect them to.
 
-## 6 Using Fixtures
+## 6 Add Fixtures
 
-## 7 Test Class
+## 7 Test Classes
 
 There are ways to group tests together, this is particularly useful when testing related methods.
 However class attributes are also shared between tests of the same class, so you must once again use fixtures to prevent side effects and inconsistent testing.
@@ -142,7 +146,7 @@ class TestScoreKeeper:
 
 To make a Test Class or group you only need do one thing
 
-### 7.1 Writing a Test Class
+### 7.1 Write a Test Class
 
 Instantiate a test class using the naming scheme Test*, where you put the name of the test class group after.
 
@@ -150,7 +154,7 @@ Instantiate a test class using the naming scheme Test*, where you put the name o
 class TestClassExample:
 ```
 
-### 7.2 Writing Tests within a class
+### 7.2 Write Tests Within a Class
 
 Like all methods within any class, you will need to include the self reference, the rest is exactly as before.
 
@@ -176,7 +180,7 @@ class TestAddAB:
 
 using TestClasses can be a good way to group the positive and negative test cases for functions together.
 
-## 8 Parameterizing Tests
+## 8 Parameterize Tests
 
 You may need to test several functions that are similar, perhaps they are two children of the same abstract class, which should preform the same operation, but in different ways. Or perhaps you have many functions that have similar data requirements, just slightly different parameters are required. Parameterizing tests can be used in both of these cases. This is also useful when you want to make sure that it works for a variety of inputs, allowing for the testing of edge cases.
 It is also possible to parameterize Fixtures, and it will behave in much the same way.
