@@ -6,15 +6,26 @@ This instructional demo is designed to guide a user through getting started with
 
 ## Table of Contents
 
-- [0. Creating and using a Virtual Environment](#0-creating-and-using-a-virtual-environment)
-  - [0.1 Setup](#01-setup)
-  - [0.2 Activating a Virtual Environment](#02-activating-a-virtual-environment)
-- [1 Installing Pytest](#1-installing-pytest)
-- [2 Creating a Test File](#2-creating-a-test-file)
+- [Pytest Demo Instructions](#pytest-demo-instructions)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [0 Creating and using a Virtual Environment](#0-creating-and-using-a-virtual-environment)
+    - [0.1 Setup](#01-setup)
+    - [0.2 Activating a virtual environment](#02-activating-a-virtual-environment)
+  - [1 Installing Pytest](#1-installing-pytest)
+  - [2 Creating a test file](#2-creating-a-test-file)
+  - [3 Writing a Basic Positive Test](#3-writing-a-basic-positive-test)
+  - [4 Writing a Basic Negative Test](#4-writing-a-basic-negative-test)
+  - [5 Testing Classes](#5-testing-classes)
+  - [6 Using Fixtures](#6-using-fixtures)
+  - [7 Test Class](#7-test-class)
+    - [7.1 Writing a Test Class](#71-writing-a-test-class)
+    - [7.2 Writing Tests within a class](#72-writing-tests-within-a-class)
+  - [8 Parameterizing Tests](#8-parameterizing-tests)
 
 ## 0 Creating and using a Virtual Environment
 
-This project assumes that you have VS Code installed already. 
+This project assumes that you have VS Code installed already.
 Make sure you have the Pytest extension installed.
 
 >[!NOTE]
@@ -22,7 +33,7 @@ Make sure you have the Pytest extension installed.
 
 ### 0.1 Setup
 
-To set up a virtual environment on PC use 
+To set up a virtual environment on PC use
 
 ```bash
 python -m venv .venv
@@ -80,7 +91,7 @@ The file extension for your test file should be ```.py```, because it is a pytho
 
 ## 5 Testing Classes
 
-When testing a class there are additional things you should be testing other than simply the returned data. 
+When testing a class there are additional things you should be testing other than simply the returned data.
 These are the **Side effects**, the contents of the class that is changed by the function being tested.
 Therefore it is important to test that the attributes change as you expect them to.
 
@@ -88,7 +99,7 @@ Therefore it is important to test that the attributes change as you expect them 
 
 ## 7 Test Class
 
-There are ways to group tests together, this is particularly useful when testing related methods. 
+There are ways to group tests together, this is particularly useful when testing related methods.
 However class attributes are also shared between tests of the same class, so you must once again use fixtures to prevent side effects and inconsistent testing.
 Instance attributes are not shared between tests, so they can be overwritten without fear.
 
