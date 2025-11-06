@@ -34,7 +34,7 @@ For this demo, you should have [Visual Studio Code](https://code.visualstudio.co
 We will be using a virtual environment to ensure consistent Python behavior across operating systems.
 
 >[!NOTE]
->**If you already have a virtual Environment set up you can skip to section 1**
+>If you already have a virtual environment set up, skip to section 1.
 
 ### 0.1 Setup
 
