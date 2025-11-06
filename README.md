@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This instructional demo is designed to guide a user through getting started with the Python testing library `pytest`, writing different types of unit tests, and providing the user with next steps on practing creating tests with `pytest`.
+This instruction will guide you through step-by-step instructions of writing `pytest` tests for a demo program and using them to debug errors. At the end of the document, there is a practice for you to test creating and using `pytest` tests.
 
 ## Table of Contents
 
@@ -22,6 +22,7 @@ This instructional demo is designed to guide a user through getting started with
     - [7.1 Writing a Test Class](#71-writing-a-test-class)
     - [7.2 Writing Tests within a class](#72-writing-tests-within-a-class)
   - [8 Parameterizing Tests](#8-parameterizing-tests)
+  - [9 ✍️ Practice](#9-️-practice)
 
 ## 0 Creating and using a Virtual Environment
 
@@ -181,3 +182,5 @@ You may need to test several functions that are similar, perhaps they are two ch
 It is also possible to parameterize Fixtures, and it will behave in much the same way.
 
 For practice you could write tests for the PriorityQueue test class, using parameterization, and debugging to figure out why the HeapPQ fails a test that LinearPQ passes.
+
+## 9 ✍️ Practice
