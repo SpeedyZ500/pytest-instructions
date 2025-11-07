@@ -81,7 +81,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     **Windows:**
 
     ```powershell
-    venv\Scripts\Activate.ps1
+    ./.venv/Scripts/Activate.ps1
     ```
 
     **MacOS or Linux:**
@@ -105,8 +105,6 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     ```bash
     pip3 install pytest
     ```
-
-Your environment is now ready for you to write some `pytest` tests.
 
 ## 2 Create a Test File
 
