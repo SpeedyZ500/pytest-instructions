@@ -1,5 +1,5 @@
 import pytest
-from score_keeper import ScoreKeeper
+from .score_keeper import ScoreKeeper
 
 def test_score_keeper_add_points():
     #Given

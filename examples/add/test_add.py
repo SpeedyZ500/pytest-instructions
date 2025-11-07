@@ -1,5 +1,5 @@
 import pytest
-from add_a_and_b import add_a_and_b
+from .add_a_and_b import add_a_and_b
 
 
 def test_add_a_and_b_both_numeric():

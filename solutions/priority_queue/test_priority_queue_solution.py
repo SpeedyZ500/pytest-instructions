@@ -1,5 +1,5 @@
 import pytest
-from solutions.priority_queue.priority_queue_solution import PriorityQueue, LinearPQ, BinaryHeapPQ
+from .priority_queue_solution import PriorityQueue, LinearPQ, BinaryHeapPQ
 
 @pytest.fixture(params=[LinearPQ, BinaryHeapPQ],ids=["linear","heap"])
 def priority_queue(request)-> PriorityQueue:
