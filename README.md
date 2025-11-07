@@ -108,6 +108,8 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     pip3 install pytest
     ```
 
+    Now that you have `pytest` installed, you are ready to start writing and running tests.
+
 ## 2 Create a Test File
 
 The demo Python class for this instruction is a class named `SongLibrary` that is located in [`demo/song_library/song_library.py`](/demo/song_library/song_library.py). It is designed provide functionality to:
