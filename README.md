@@ -192,7 +192,9 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 ## 22.2 Run `pytest`
 
-1. Press the "Run Tests" button in the Testing tab. This will run all the tests that
+1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
+
+    Notice that
 
 ## 3 Write a Positive Test
 
