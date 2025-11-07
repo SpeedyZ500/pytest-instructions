@@ -19,8 +19,11 @@ This instruction will guide you through step-by-step instructions of writing `py
   - [22 Run a Test File with `pytest`](#22-run-a-test-file-with-pytest)
   - [22.1 Configure Python Tests](#221-configure-python-tests)
   - [22.2 Run `pytest`](#222-run-pytest)
-  - [3 Write a Positive Test](#3-write-a-positive-test)
-  - [4 Write a Negative Test](#4-write-a-negative-test)
+  - [3 Implement a Positive Test](#3-implement-a-positive-test)
+    - [3.1 Write a Positive Test](#31-write-a-positive-test)
+    - [3.2 Run a Positive Test](#32-run-a-positive-test)
+    - [3.3 Implement Fixes](#33-implement-fixes)
+  - [4 Implement a Negative Test](#4-implement-a-negative-test)
   - [5 Test Classes](#5-test-classes)
   - [6 Add Fixtures](#6-add-fixtures)
   - [7 Test Classes](#7-test-classes)
@@ -128,7 +131,7 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
 1. Create a new file named `test_song_library.py` in the [`song_library`](/demo/song_library) folder.
 
-2. Paste the following starter code into `test_song_library.py`.
+2. Paste the following starter code into `test_song_library.py`:
 
     ```py
     import pytest
@@ -194,11 +197,43 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
-    Notice that
+    Notice that all of the tests except for `test_add_song_positive` will fail due to a `NotImplementedError` being thrown.
 
-## 3 Write a Positive Test
+    > [!NOTE]
+    > A `NotImplementedError` in Python notes functionality that has not yet been fully implemented.
+    >
+    > In this instruction, you will be replacing the occurences of `NotImplementedError` with code to debug `SongLibrary`.
 
-## 4 Write a Negative Test
+Now that you can run `pytest`, you will implement a positive and negative test in `test_song_library.py`.
+
+## 3 Implement a Positive Test
+
+Positive tests assert that
+
+### 3.1 Write a Positive Test
+
+The first positive test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide valid inputs and assert that the method runs as expected.
+
+1. Replace `test_remove_song_positive` with the following code:
+
+    ```py
+    def test_remove_song_positive():
+        song_library.clear()
+        song_library.add_song(Song("We Built This City", "Rock"))
+        song_library.remove_song("We Built This City")
+
+        assert 0 == len(song_library.songs)
+    ```
+
+    The steps of the above code are as follows:
+
+    - This test will run `clear` on the testing `SongLibrary` to
+
+### 3.2 Run a Positive Test
+
+### 3.3 Implement Fixes
+
+## 4 Implement a Negative Test
 
 ## 5 Test Classes
 
