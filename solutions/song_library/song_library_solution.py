@@ -3,7 +3,7 @@ class Song:
     def __init__(self, name:str, genre:str) -> None:
         self.name = name
         self.genre = genre
-    
+
 
     def __repr__(self) -> str:
         return f"\"{self.name}\""
@@ -35,7 +35,7 @@ class SongLibrary:
 
         for i in range(len(self.songs)):
             if self.songs[i].name == song_name:
-                self.songs.remove(i) # type: ignore
+                self.songs.pop(i)
                 print(f"Removed: {song_name}")
                 return
         print("No song found")
@@ -46,7 +46,7 @@ class SongLibrary:
         genre_songs:list[Song] = []
 
         for i in range(len(self.songs)):
-            if self.songs[i].name == genre:
+            if self.songs[i].genre == genre:
                 genre_songs.append(self.songs[i])
         
         return genre_songs
