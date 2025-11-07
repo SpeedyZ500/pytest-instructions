@@ -116,7 +116,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     >The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
 2. Create a new file named `test_song_library.py` in the same folder.
-3. Paste the following code into `test_song_library.py`.
+3. Paste the following starter code into `test_song_library.py`.
 
     ```py
     import pytest
