@@ -61,7 +61,6 @@ We will be using a virtual Python environment called `venv` to ensure consistent
 
     > [!NOTE]
     > Any standard command terminal such as Powershell or Bash will work for this demo.
-
 2. Run the following command to set up `venv` on your machine.
 
     **Windows:**
@@ -130,7 +129,6 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 > The file extension for your test file should be `.py` because it is a python file.
 
 1. Create a new file named `test_song_library.py` in the [`song_library`](/demo/song_library) folder.
-
 2. Paste the following starter code into `test_song_library.py`:
 
     ```py
@@ -186,7 +184,6 @@ Now that you have created a test file, you can configure VS Code to discover and
 
     > [!IMPORTANT]  
     > The Testing tab is located on the left side of the screen.
-
 2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
 3. Select `pytest` as the enabled testing framework.
 4. Select the root directory `.` as the test directory.
@@ -208,7 +205,7 @@ Now that you can run `pytest`, you will implement a positive and negative test i
 
 ## 3 Implement a Positive Test
 
-Positive tests assert that
+Positive tests assert that programs function as expected given valid input.
 
 ### 3.1 Write a Positive Test
 
@@ -225,13 +222,64 @@ The first positive test that you will implement is for the `remove_song` method 
         assert 0 == len(song_library.songs)
     ```
 
-    The steps of the above code are as follows:
+    The above test will
 
-    - This test will run `clear` on the testing `SongLibrary` to
+    - run `clear` on the testing `SongLibrary` to remove songs left over from other tests.
+    - add a new `Rock` song named `"We Built This City"` to the testing `SongLibrary`.
+    - remove a song named `"We Built This City"`.
+    - assert that the testing `SongLibrary` is empty.
 
 ### 3.2 Run a Positive Test
 
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the "Test Results" tab to see why the test failed.
+2. Open the "Test Results" tab located at the bottom of the screen.
+3. Select `test_remove_song_positive` from the list of tests.
+4. Look at the test output tab on the right side. The tab will explain why `test_remove_song_positive` failed.
+
+    The error will look something like the following:
+
+    ```py
+            song_library.clear()
+            song_library.add_song(Song("We Built This City", "Rock"))
+    >       song_library.remove_song("We Built This City")
+
+    song_library\test_song_library.py:23: 
+    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    self = Library(["We Built This City"]), song_name = 'We Built This City'
+
+        def remove_song(self, song_name:str) -> None:
+        
+            for i in range(len(self.songs)):
+                if self.songs[i].name == song_name:
+    >               self.songs.remove(i) # type: ignore
+                    ^^^^^^^^^^^^^^^^^^^^
+    E               ValueError: list.remove(x): x not in list
+
+    song_library\song_library.py:38: ValueError
+    ```
+
+    From these results, you can see that the test failure was caused by a `ValueError` on line 38 of `song_library.py`.
+
+Now that you can identify an error in the code, you can try to implement a fix for the error.
+
 ### 3.3 Implement Fixes
+
+1. Open `song_library.py`.
+2. Locate the `remove_song` method in the `SongLibrary` class.
+
+    Line 38, which raised a `ValueError`, is intended to remove the `Song` from `SongLibrary` at index `i`. This line calls `songs.remove`. The `remove` method on `songs` removes a `Song` that matches an input value to `remove`. However, this line is intended to remove a song based on its index, not its value.
+
+    The correct method, then, is `songs.pop`, which removes `Song` elements based on index.
+3. Replace line 38 of `song_library.py` with
+
+    ```py
+    self.songs.pop(i)
+    ```
+
+4. Press the "Run Tests" button in the Testing tab to re-run all tests. `test_remove_song_positive` is now passing.
+
+You have created and implemented a positive test. The next section will instruct you in writing a negative test, a test that tests program functionality with invalid inputs.
 
 ## 4 Implement a Negative Test
 
