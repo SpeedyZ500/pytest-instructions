@@ -3,6 +3,9 @@ class Song:
     def __init__(self, name:str, genre:str) -> None:
         self.name = name
         self.genre = genre
+    
+    def __repr__(self) -> str:
+        return f"\"{self.name}\""
 
 class SongLibrary:
 
@@ -11,16 +14,20 @@ class SongLibrary:
     def __init__(self) -> None:
         pass
 
-    def get_songs(self) -> list[Song]:
-        return self.songs
-
+    def clear(self) -> None:
+        self.songs.clear()
 
     def add_song(self, song:Song) -> None:
+
+        if not isinstance(song, Song):
+            raise TypeError
+
         self.songs.append(song)
         print(f"Added: {song.name}")
 
 
     def remove_song(self, song_name:str) -> None:
+
         for i in range(len(self.songs)):
             if self.songs[i].name == song_name:
                 self.songs.pop(i)
@@ -28,13 +35,15 @@ class SongLibrary:
                 return
         print("No song found")
 
-    def print_songs_in_genre(self, genre:str) -> None:
+    def get_songs_in_genre(self, genre:str) -> list[Song]:
 
-        songs_found:bool = False
+        genre_songs:list[Song] = []
 
         for i in range(len(self.songs)):
             if self.songs[i].genre == genre:
-                print(self.songs[i].name)
+                genre_songs.append(self.songs[i])
         
-        if not songs_found:
-            print("No songs in genre")
+        return genre_songs
+    
+    def __repr__(self) -> str:
+        return f"Library({repr(self.songs)})"
