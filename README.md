@@ -110,13 +110,13 @@ You now have to tell VS Code that you want to use the virtual environment. This 
 
 ## 2 Create a Test File
 
-Located in [`demo/song_library/song_library.py`](/demo/song_library/song_library.py) is a demo Python class named `SongLibrary`. Using a `SongLibrary` object, a user should be able to do the following:
+The demo Python class for this instruction is a class named `SongLibrary` that is located in [`demo/song_library/song_library.py`](/demo/song_library/song_library.py). It is designed provide functionality to:
 
 - add new songs
 - remove songs
 - get songs based on genre
 
-This instruction will walk you through debugging `SongLibrary` using `pytest`.
+To verify that `SongLibrary` is working as expected, this instruction will walk you through debugging `SongLibrary` using `pytest`.
 
 ### 2.1 Set Up a Test File
 
@@ -128,7 +128,8 @@ This instruction will walk you through debugging `SongLibrary` using `pytest`.
     >The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
 2. Create a new file named `test_song_library.py` in the same folder.
-3. Paste the following starter code into `test_song_library.py`. This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`.
+
+3. Paste the following starter code into `test_song_library.py`.
 
     ```py
     import pytest
@@ -170,6 +171,8 @@ This instruction will walk you through debugging `SongLibrary` using `pytest`.
         # TODO: Impelement
         raise NotImplementedError
     ```
+
+    This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The first test, `test_add_song_positive`, is already provided for you.
 
 ### 2.2 Run a Test File with Pytest
 
