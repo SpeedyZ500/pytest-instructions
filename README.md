@@ -108,12 +108,47 @@ You now have to tell VS Code that you want to use the virtual environment. This 
 
 ## 2 Create a Test File
 
-The
+1. Navigate to the `demo/song_library` folder in the VS Code Explorer tab.
 
-1. Navigate to `demo/`
+    >[!NOTE]
+    >`pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
+    >
+    >The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
-`pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
-The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
+2. Create a new file named `test_song_library.py` in the same folder.
+3. Paste the following code into `test_song_library.py`.
+
+    ```py
+    import pytest
+    from song_library import Song, SongLibrary
+
+    song_library = SongLibrary()
+
+    def test_add_song_positive():
+        song_library.clear()
+        song_library.add_song(Song("We Built This City", "Rock"))
+        assert 1 == len(song_library.songs)
+
+    def test_add_song_negative():
+        # TODO: Impelement
+        raise NotImplementedError
+
+    def test_remove_song_positive():
+        # TODO: Impelement
+        raise NotImplementedError
+
+    def test_remove_song_negative():
+        # TODO: Impelement
+        raise NotImplementedError
+
+    def test_get_songs_in_genre_positive():
+        # TODO: Impelement
+        raise NotImplementedError
+
+    def test_get_songs_in_genre_negative():
+        # TODO: Impelement
+        raise NotImplementedError
+    ```
 
 ## 3 Write a Positive Test
 
