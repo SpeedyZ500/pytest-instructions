@@ -63,7 +63,7 @@ You will use Visual Studio Code as the Integrated Development Environment (IDE) 
    - macOS: `⌘+Shift+X`
    - Or click the stacked block icon  <img src="images/extensions_panel.png" alt="Extensions Panel" width="18" /> in the Activity Bar
 
-3. **Search for** and **install**:
+4. **Search for** and **install**:
    - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) Microsoft bundle
    - [MyPy](https://marketplace.visualstudio.com/items?itemName=matangover.mypy) by Matan Grover
    - [Ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) by Astral Software
@@ -434,7 +434,7 @@ You can see all your TODOs in _VSCode_ the _Problems_ view. You can access this 
 **TODOs and Ruff**
 When you installed the `project0` package, the `pyproject.toml` file installed a tool called `ruff`.
 
-```
+```txt
 [tool.ruff]
 lint.extend-select = ["I","FIX002", "TD001"]
 target-version = "py312"
@@ -485,7 +485,7 @@ project0 CS236
 
 You should see:
 
-```
+```txt
 Hello World CS236
 ```
 

@@ -32,7 +32,7 @@ For this demo, you should have [Visual Studio Code](https://code.visualstudio.co
 
 ## -1 Download the Starter Code
 
-This instruction contains three modules
+This repository contains the starter code for this instruction. T
 
 ## 0 Create a Virtual Environment
 
