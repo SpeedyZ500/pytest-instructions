@@ -295,6 +295,19 @@ Negative tests assert that programs function as expected given invalid or incorr
 
 The first negative test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide incorrect input and assert that the method runs as expected.
 
+1. Replace `test_remove_song_negative` with the following code:
+
+    ```py
+    def test_remove_song_negative():
+        song_library.clear()
+        song_library.remove_song("The Unsung Song")
+    ```
+
+    The above test will
+
+    - run `clear` on the testing `SongLibrary` to remove songs left over from other tests.
+    - assert no errors when removing a non-existent song `"The Unsung Song"`.
+
 ### 6.2 Run a Negative Test
 
 1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_negative` succeeded. Because it succeeded, you will not have to implement any additional fixes in `remove_song`.
