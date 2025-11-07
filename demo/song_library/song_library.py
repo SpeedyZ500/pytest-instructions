@@ -30,7 +30,7 @@ class SongLibrary:
 
         for i in range(len(self.songs)):
             if self.songs[i].name == song_name:
-                self.songs.pop(i)
+                self.songs.remove(i) # type: ignore
                 print(f"Removed: {song_name}")
                 return
         print("No song found")
@@ -40,7 +40,7 @@ class SongLibrary:
         genre_songs:list[Song] = []
 
         for i in range(len(self.songs)):
-            if self.songs[i].genre == genre:
+            if self.songs[i].name == genre:
                 genre_songs.append(self.songs[i])
         
         return genre_songs
