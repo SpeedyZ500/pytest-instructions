@@ -4,18 +4,23 @@ class Song:
         self.name = name
         self.genre = genre
     
+
     def __repr__(self) -> str:
         return f"\"{self.name}\""
+
 
 class SongLibrary:
 
     songs:list[Song] = []
 
+
     def __init__(self) -> None:
         pass
 
+
     def clear(self) -> None:
         self.songs.clear()
+
 
     def add_song(self, song:Song) -> None:
 
@@ -35,6 +40,7 @@ class SongLibrary:
                 return
         print("No song found")
 
+
     def get_songs_in_genre(self, genre:str) -> list[Song]:
 
         genre_songs:list[Song] = []
@@ -44,6 +50,7 @@ class SongLibrary:
                 genre_songs.append(self.songs[i])
         
         return genre_songs
-    
+
+
     def __repr__(self) -> str:
         return f"Library({repr(self.songs)})"

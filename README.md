@@ -16,6 +16,8 @@ This instruction will guide you through step-by-step instructions of writing `py
     - [0.2 Activate your Virtual Environment](#02-activate-your-virtual-environment)
   - [1 Install Pytest](#1-install-pytest)
   - [2 Create a Test File](#2-create-a-test-file)
+    - [2.1 Set Up a Test File](#21-set-up-a-test-file)
+    - [2.2 Run a Test File with Pytest](#22-run-a-test-file-with-pytest)
   - [3 Write a Positive Test](#3-write-a-positive-test)
   - [4 Write a Negative Test](#4-write-a-negative-test)
   - [5 Test Classes](#5-test-classes)
@@ -108,7 +110,17 @@ You now have to tell VS Code that you want to use the virtual environment. This 
 
 ## 2 Create a Test File
 
-1. Navigate to the `demo/song_library` folder in the VS Code Explorer tab.
+Located in [`demo/song_library/song_library.py`](/demo/song_library/song_library.py) is a demo Python class named `SongLibrary`. Using a `SongLibrary` object, a user should be able to do the following:
+
+- add new songs
+- remove songs
+- get songs based on genre
+
+This instruction will walk you through debugging `SongLibrary` using `pytest`.
+
+### 2.1 Set Up a Test File
+
+1. Navigate to the [`demo/song_library`](/demo/song_library/) folder in the VS Code Explorer tab.
 
     >[!NOTE]
     >`pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
@@ -116,7 +128,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     >The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
 2. Create a new file named `test_song_library.py` in the same folder.
-3. Paste the following starter code into `test_song_library.py`.
+3. Paste the following starter code into `test_song_library.py`. This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`.
 
     ```py
     import pytest
@@ -149,6 +161,8 @@ You now have to tell VS Code that you want to use the virtual environment. This 
         # TODO: Impelement
         raise NotImplementedError
     ```
+
+### 2.2 Run a Test File with Pytest
 
 ## 3 Write a Positive Test
 
