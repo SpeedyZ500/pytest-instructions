@@ -27,14 +27,16 @@ This instruction will guide you through step-by-step instructions of writing `py
     - [6.1 Write a Negative Test](#61-write-a-negative-test)
     - [6.2 Run a Negative Test](#62-run-a-negative-test)
   - [7 Implement Positive and Negative Tests](#7-implement-positive-and-negative-tests)
-  - [7.1 Write Positive and Negative Tests](#71-write-positive-and-negative-tests)
-  - [5 Test Classes](#5-test-classes)
-  - [6 Add Fixtures](#6-add-fixtures)
-  - [7 Test Classes](#7-test-classes)
+    - [7.1 Write Positive and Negative Tests](#71-write-positive-and-negative-tests)
+    - [7.2 Run Positive and Negative Tests](#72-run-positive-and-negative-tests)
+    - [7.3 Implement Fixes](#73-implement-fixes)
+  - [8 Write Test Classes](#8-write-test-classes)
+  - [9 Add Fixtures](#9-add-fixtures)
+  - [10 Test Classes](#10-test-classes)
     - [7.1 Write a Test Class](#71-write-a-test-class)
     - [7.2 Write Tests Within a Class](#72-write-tests-within-a-class)
-  - [8 Parameterize Tests](#8-parameterize-tests)
-  - [9 ✍️ Practice](#9-️-practice)
+  - [11 Parameterize Tests](#11-parameterize-tests)
+  - [12 ✍️ Practice](#12-️-practice)
 
 ## Prerequisites
 
@@ -295,15 +297,36 @@ The first negative test that you will implement is for the `remove_song` method 
 
 ### 6.2 Run a Negative Test
 
-1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_positive` succeeded. Because it succeeded, you will not have to implement any fixes in `remove_song`.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_negative` succeeded. Because it succeeded, you will not have to implement any additional fixes in `remove_song`.
 
 You will now implement positive and negative tests for the `get_songs_in_genre` method and implement fixes.
 
 ## 7 Implement Positive and Negative Tests
 
-## 7.1 Write Positive and Negative Tests
+### 7.1 Write Positive and Negative Tests
 
-1. Replace `test_remove_song_negative` with the following code:
+1. Replace `test_remove_song_positive` with the following code:
+
+    ```py
+    def test_get_songs_in_genre_positive():
+        song_library.clear()
+        song_library.add_song(Song("We Built This City", "Rock"))
+        song_library.add_song(Song("Hello World", "Pop"))
+        song_library.add_song(Song("Take Me Home, Country Roads", "Country"))
+
+        assert 1 == len(song_library.get_songs_in_genre("Rock"))
+    ```
+
+    The above test will
+
+    - run `clear` on the testing `SongLibrary` to remove songs left over from other tests.
+    - add three new songs to the testing `SongLibrary`:
+      - a `Rock` song named `"We Built This City"`
+      - a `Pop` song named `"Hello World"`
+      - a `Country` song named `"Take Me Home, Country Roads"`
+    - assert that the testing `SongLibrary` has one `Rock` song.
+
+2. Replace `test_remove_song_negative` with the following code:
 
     ```py
     def test_get_songs_in_genre_negative():
@@ -324,15 +347,34 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
       - a `Country` song named `"Take Me Home, Country Roads"`
     - assert that the testing `SongLibrary` has no `Classical` songs.
 
-## 5 Test Classes
+### 7.2 Run Positive and Negative Tests
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
+
+### 7.3 Implement Fixes
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
+
+## 8 Write Test Classes
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
 
 When testing a class there are additional things you should be testing other than simply the returned data.
 These are the **Side effects**; the contents of the class that is changed by the function being tested.
 Therefore it is important to test that the attributes change as you expect them to.
 
-## 6 Add Fixtures
+## 9 Add Fixtures
 
-## 7 Test Classes
+> [!CAUTION]
+> This section has not been fully implemented yet.
+
+## 10 Test Classes
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
 
 There are ways to group tests together, this is particularly useful when testing related methods.
 However class attributes are also shared between tests of the same class, so you must once again use fixtures to prevent side effects and inconsistent testing.
@@ -410,11 +452,17 @@ class TestAddAB:
 
 using TestClasses can be a good way to group the positive and negative test cases for functions together.
 
-## 8 Parameterize Tests
+## 11 Parameterize Tests
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
 
 You may need to test several functions that are similar, perhaps they are two children of the same abstract class, which should preform the same operation, but in different ways. Or perhaps you have many functions that have similar data requirements, just slightly different parameters are required. Parameterizing tests can be used in both of these cases. This is also useful when you want to make sure that it works for a variety of inputs, allowing for the testing of edge cases.
 It is also possible to parameterize Fixtures, and it will behave in much the same way.
 
 For practice you could write tests for the PriorityQueue test class, using parameterization, and debugging to figure out why the HeapPQ fails a test that LinearPQ passes.
 
-## 9 ✍️ Practice
+## 12 ✍️ Practice
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
