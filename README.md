@@ -10,20 +10,24 @@ This instruction will guide you through step-by-step instructions of writing `py
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [-1 Download the Starter Code](#-1-download-the-starter-code)
-  - [0 Create a Virtual Environment](#0-create-a-virtual-environment)
-    - [0.1 Setup the Virtual Environment](#01-setup-the-virtual-environment)
-    - [0.2 Activate your Virtual Environment](#02-activate-your-virtual-environment)
-  - [1 Install Pytest](#1-install-pytest)
-  - [2 Create a Test File](#2-create-a-test-file)
-  - [22 Run a Test File with `pytest`](#22-run-a-test-file-with-pytest)
-  - [22.1 Configure Python Tests](#221-configure-python-tests)
-  - [22.2 Run `pytest`](#222-run-pytest)
-  - [3 Implement a Positive Test](#3-implement-a-positive-test)
-    - [3.1 Write a Positive Test](#31-write-a-positive-test)
-    - [3.2 Run a Positive Test](#32-run-a-positive-test)
-    - [3.3 Implement Fixes](#33-implement-fixes)
-  - [4 Implement a Negative Test](#4-implement-a-negative-test)
+  - [0 Download the Starter Code](#0-download-the-starter-code)
+  - [1 Create a Virtual Environment](#1-create-a-virtual-environment)
+    - [1.1 Setup the Virtual Environment](#11-setup-the-virtual-environment)
+    - [1.2 Activate your Virtual Environment](#12-activate-your-virtual-environment)
+  - [2 Install Pytest](#2-install-pytest)
+  - [3 Create a Test File](#3-create-a-test-file)
+  - [4 Run a Test File with `pytest`](#4-run-a-test-file-with-pytest)
+    - [4.1 Configure Python Tests](#41-configure-python-tests)
+    - [4.2 Run `pytest`](#42-run-pytest)
+  - [5 Implement a Positive Test](#5-implement-a-positive-test)
+    - [5.1 Write a Positive Test](#51-write-a-positive-test)
+    - [5.2 Run a Positive Test](#52-run-a-positive-test)
+    - [5.3 Implement Fixes](#53-implement-fixes)
+  - [6 Implement a Negative Test](#6-implement-a-negative-test)
+    - [6.1 Write a Negative Test](#61-write-a-negative-test)
+    - [6.2 Run a Negative Test](#62-run-a-negative-test)
+  - [7 Implement Positive and Negative Tests](#7-implement-positive-and-negative-tests)
+  - [7.1 Write Positive and Negative Tests](#71-write-positive-and-negative-tests)
   - [5 Test Classes](#5-test-classes)
   - [6 Add Fixtures](#6-add-fixtures)
   - [7 Test Classes](#7-test-classes)
@@ -36,7 +40,7 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
 
-## -1 Download the Starter Code
+## 0 Download the Starter Code
 
 This repository contains the starter code for this instruction. You will be debugging and creating tests with these files.
 
@@ -48,14 +52,14 @@ This repository contains the starter code for this instruction. You will be debu
 
 2. Open the folder [`demo/song_library`](/demo/song_library/) in VS Code.
 
-## 0 Create a Virtual Environment
+## 1 Create a Virtual Environment
 
 We will be using a virtual Python environment called `venv` to ensure consistent Python behavior across operating systems.
 
 > [!NOTE]
 > If you already have a virtual environment set up, skip to section 1.
 
-### 0.1 Setup the Virtual Environment
+### 1.1 Setup the Virtual Environment
 
 1. Open a command terminal in your project folder.
 
@@ -77,7 +81,7 @@ We will be using a virtual Python environment called `venv` to ensure consistent
 
 This creates a hidden directory called `.venv` in your working directory containing a standalone Python environment.
 
-### 0.2 Activate your Virtual Environment
+### 1.2 Activate your Virtual Environment
 
 You now have to tell VS Code that you want to use the virtual environment. This is called _activating_ the environment.
 
@@ -95,7 +99,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     source .venv/bin/activate
     ```
 
-## 1 Install Pytest
+## 2 Install Pytest
 
 1. Run the following command to install `pytest` in your virtual enviroment.
 
@@ -113,7 +117,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
 
     Now that you have `pytest` installed, you are ready to start writing and running tests.
 
-## 2 Create a Test File
+## 3 Create a Test File
 
 The demo Python class for this instruction is a class named `SongLibrary` that is located in [`demo/song_library/song_library.py`](/demo/song_library/song_library.py). It is designed provide functionality to:
 
@@ -174,11 +178,11 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
     This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The first test, `test_add_song_positive`, is already provided for you.
 
-## 22 Run a Test File with `pytest`
+## 4 Run a Test File with `pytest`
 
 Now that you have created a test file, you can configure VS Code to discover and execute your tests.
 
-## 22.1 Configure Python Tests
+### 4.1 Configure Python Tests
 
 1. Open the Testing tab in VS Code.
 
@@ -190,7 +194,7 @@ Now that you have created a test file, you can configure VS Code to discover and
 
 VS Code is now configured to automatically discover any test files and tests in your root directory.
 
-## 22.2 Run `pytest`
+### 4.2 Run `pytest`
 
 1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
@@ -203,11 +207,11 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 Now that you can run `pytest`, you will implement a positive and negative test in `test_song_library.py`.
 
-## 3 Implement a Positive Test
+## 5 Implement a Positive Test
 
 Positive tests assert that programs function as expected given valid input.
 
-### 3.1 Write a Positive Test
+### 5.1 Write a Positive Test
 
 The first positive test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide valid inputs and assert that the method runs as expected.
 
@@ -229,7 +233,7 @@ The first positive test that you will implement is for the `remove_song` method 
     - remove a song named `"We Built This City"`.
     - assert that the testing `SongLibrary` is empty.
 
-### 3.2 Run a Positive Test
+### 5.2 Run a Positive Test
 
 1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the "Test Results" tab to see why the test failed.
 2. Open the "Test Results" tab located at the bottom of the screen.
@@ -263,7 +267,7 @@ The first positive test that you will implement is for the `remove_song` method 
 
 Now that you can identify an error in the code, you can try to implement a fix for the error.
 
-### 3.3 Implement Fixes
+### 5.3 Implement Fixes
 
 1. Open `song_library.py`.
 2. Locate the `remove_song` method in the `SongLibrary` class.
@@ -279,9 +283,46 @@ Now that you can identify an error in the code, you can try to implement a fix f
 
 4. Press the "Run Tests" button in the Testing tab to re-run all tests. `test_remove_song_positive` is now passing.
 
-You have created and implemented a positive test. The next section will instruct you in writing a negative test, a test that tests program functionality with invalid inputs.
+You have created and implemented a positive test. The next section will instruct you in writing a test for testing program functionality with invalid inputs.
 
-## 4 Implement a Negative Test
+## 6 Implement a Negative Test
+
+Negative tests assert that programs function as expected given invalid or incorrect input.
+
+### 6.1 Write a Negative Test
+
+The first negative test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide incorrect input and assert that the method runs as expected.
+
+### 6.2 Run a Negative Test
+
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_positive` succeeded. Because it succeeded, you will not have to implement any fixes in `remove_song`.
+
+You will now implement positive and negative tests for the `get_songs_in_genre` method and implement fixes.
+
+## 7 Implement Positive and Negative Tests
+
+## 7.1 Write Positive and Negative Tests
+
+1. Replace `test_remove_song_negative` with the following code:
+
+    ```py
+    def test_get_songs_in_genre_negative():
+        song_library.clear()
+        song_library.add_song(Song("We Built This City", "Rock"))
+        song_library.add_song(Song("Hello World", "Pop"))
+        song_library.add_song(Song("Take Me Home, Country Roads", "Country"))
+
+        assert 0 == len(song_library.get_songs_in_genre("Classical"))
+    ```
+
+    The above test will
+
+    - run `clear` on the testing `SongLibrary` to remove songs left over from other tests.
+    - add three new songs to the testing `SongLibrary`:
+      - a `Rock` song named `"We Built This City"`
+      - a `Pop` song named `"Hello World"`
+      - a `Country` song named `"Take Me Home, Country Roads"`
+    - assert that the testing `SongLibrary` has no `Classical` songs.
 
 ## 5 Test Classes
 
