@@ -16,7 +16,9 @@ This instruction will guide you through step-by-step instructions of writing `py
     - [0.2 Activate your Virtual Environment](#02-activate-your-virtual-environment)
   - [1 Install Pytest](#1-install-pytest)
   - [2 Create a Test File](#2-create-a-test-file)
-  - [2.2 Run a Test File with `pytest`](#22-run-a-test-file-with-pytest)
+  - [22 Run a Test File with `pytest`](#22-run-a-test-file-with-pytest)
+  - [22.1 Configure Python Tests](#221-configure-python-tests)
+  - [22.2 Run `pytest`](#222-run-pytest)
   - [3 Write a Positive Test](#3-write-a-positive-test)
   - [4 Write a Negative Test](#4-write-a-negative-test)
   - [5 Test Classes](#5-test-classes)
@@ -41,7 +43,7 @@ This repository contains the starter code for this instruction. You will be debu
     git clone https://github.com/SpeedyZ500/pytest-instructions.git
     ```
 
-2. Open the repository in VS Code.
+2. Open the folder [`demo/song_library`](/demo/song_library/) in VS Code.
 
 ## 0 Create a Virtual Environment
 
@@ -119,20 +121,18 @@ The demo Python class for this instruction is a class named `SongLibrary` that i
 
 To verify that `SongLibrary` is working as expected, this instruction will walk you through debugging `SongLibrary` using `pytest`.
 
-1. Navigate to the [`demo/song_library`](/demo/song_library/) folder in the VS Code Explorer tab.
+> [!NOTE]
+> `pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
+>
+> The file extension for your test file should be `.py` because it is a python file.
 
-    > [!NOTE]
-    > `pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
-    >
-    > The file extension for your test file should be `.py` because it is a python file.
+1. Create a new file named `test_song_library.py` in the [`song_library`](/demo/song_library) folder.
 
-2. Create a new file named `test_song_library.py` in the same folder.
-
-3. Paste the following starter code into `test_song_library.py`.
+2. Paste the following starter code into `test_song_library.py`.
 
     ```py
     import pytest
-    from song_library import Song, SongLibrary
+    from .song_library import Song, SongLibrary
 
     song_library = SongLibrary()
 
@@ -173,14 +173,26 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
     This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The first test, `test_add_song_positive`, is already provided for you.
 
-## 2.2 Run a Test File with `pytest`
+## 22 Run a Test File with `pytest`
+
+Now that you have created a test file, you can configure VS Code to discover and execute your tests.
+
+## 22.1 Configure Python Tests
 
 1. Open the Testing tab in VS Code.
 
     > [!IMPORTANT]  
     > The Testing tab is located on the left side of the screen.
 
-2. Press the "Run Tests" icon.
+2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
+3. Select `pytest` as the enabled testing framework.
+4. Select the root directory `.` as the test directory.
+
+VS Code is now configured to automatically discover any test files and tests in your root directory.
+
+## 22.2 Run `pytest`
+
+1. Press the "Run Tests" button in the Testing tab. This will run all the tests that
 
 ## 3 Write a Positive Test
 

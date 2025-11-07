@@ -1,5 +1,5 @@
 import pytest
-from solutions.song_library.song_library_solution import Song, SongLibrary
+from .song_library_solution import Song, SongLibrary
 
 song_library = SongLibrary()
 
