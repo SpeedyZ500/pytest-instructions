@@ -1,5 +1,5 @@
 import pytest
-from example_code import same_signs
+from same_signs import same_signs
 
 @pytest.mark.parametrize("a",["stuff", ["things", "nonsense"], (1,2)])
 def test_same_signs_incompatible(a):
