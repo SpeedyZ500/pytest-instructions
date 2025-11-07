@@ -125,7 +125,7 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
     >[!NOTE]
     >`pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
     >
-    >The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
+    >The file extension for your test file should be `.py`, because it is a python file.
 
 2. Create a new file named `test_song_library.py` in the same folder.
 
