@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This instruction will guide you through step-by-step instructions of writing `pytest` tests for a demo program and using them to debug errors. At the end of the document, there is a practice for you to test creating and using `pytest` tests.
+This instruction will guide you through step-by-step instructions of writing `pytest` tests for a demo program and using them to debug errors. At the end of the instruction, there is a practice for you to test creating and using `pytest` tests.
 
 ## Table of Contents
 
@@ -28,22 +28,35 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 ## Prerequisites
 
-For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed. This extension comes with support for integrading the IDE with the `pytest` framework.
+For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
 
 ## -1 Download the Starter Code
 
-This repository contains the starter code for this instruction. T
+This repository contains the starter code for this instruction. You will be debugging and creating tests with these files.
+
+1. Run the following command to clone this repository to your computer.
+
+    ```bash
+    git clone https://github.com/SpeedyZ500/pytest-instructions.git
+    ```
+
+2. Open the repository in VS Code.
 
 ## 0 Create a Virtual Environment
 
-We will be using a virtual environment to ensure consistent Python behavior across operating systems.
+We will be using a virtual Python environment called `venv` to ensure consistent Python behavior across operating systems.
 
 >[!NOTE]
 >If you already have a virtual environment set up, skip to section 1.
 
 ### 0.1 Setup the Virtual Environment
 
-1. Run the following command to set up `venv` on your machine.
+1. Open a command terminal in your project folder.
+
+    >[!NOTE]
+    > Any standard command terminal such as Powershell or Bash will work for this demo.
+
+2. Run the following command to set up `venv` on your machine.
 
     **Windows:**
 
@@ -57,7 +70,7 @@ We will be using a virtual environment to ensure consistent Python behavior acro
     python3 -m venv .venv
     ```
 
-This creates a hidden directory called `.venv` in your project folder containing a standalone Python environment.
+This creates a hidden directory called `.venv` in your working directory containing a standalone Python environment.
 
 ### 0.2 Activate your Virtual Environment
 
@@ -93,7 +106,13 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     pip3 install pytest
     ```
 
+Your environment is now ready for you to write some `pytest` tests.
+
 ## 2 Create a Test File
+
+The
+
+1. Navigate to `demo/`
 
 `pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
 The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
