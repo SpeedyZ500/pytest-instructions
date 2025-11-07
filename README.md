@@ -10,8 +10,9 @@ This instruction will guide you through step-by-step instructions of writing `py
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
+  - [-1 Download the Starter Code](#-1-download-the-starter-code)
   - [0 Create a Virtual Environment](#0-create-a-virtual-environment)
-    - [0.1 Setup](#01-setup)
+    - [0.1 Setup the Virtual Environment](#01-setup-the-virtual-environment)
     - [0.2 Activate your Virtual Environment](#02-activate-your-virtual-environment)
   - [1 Install Pytest](#1-install-pytest)
   - [2 Create a Test File](#2-create-a-test-file)
@@ -29,6 +30,10 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed. This extension comes with support for integrading the IDE with the `pytest` framework.
 
+## -1 Download the Starter Code
+
+This instruction contains three modules
+
 ## 0 Create a Virtual Environment
 
 We will be using a virtual environment to ensure consistent Python behavior across operating systems.
@@ -36,59 +41,65 @@ We will be using a virtual environment to ensure consistent Python behavior acro
 >[!NOTE]
 >If you already have a virtual environment set up, skip to section 1.
 
-### 0.1 Setup
+### 0.1 Setup the Virtual Environment
 
-To set up a virtual environment on PC use
+1. Run the following command to set up `venv` on your machine.
 
-```bash
-python -m venv .venv
-```
+    **Windows:**
 
-and if on a Mac or a computer configured to use Linux then you should type
+    ```powershell
+    python -m venv .venv
+    ```
 
-```bash
-python3 -m venv .venv
-```
+    **MacOS or Linux:**
+
+    ```bash
+    python3 -m venv .venv
+    ```
 
 This creates a hidden directory called `.venv` in your project folder containing a standalone Python environment.
 
 ### 0.2 Activate your Virtual Environment
 
-You now have to tell VSCode that you want to use the virtual environment. This is called _activating_ the environment. How you activate `venv` depends on your machine.
+You now have to tell VS Code that you want to use the virtual environment. This is called _activating_ the environment.
 
-For a Windows machine running PowerShell,
+1. Run the following command to activate `venv` on your machine.
 
-```powershell
-venv\Scripts\Activate.ps1
-```
+    **Windows:**
 
-and on a Mac or Linux-based machine
+    ```powershell
+    venv\Scripts\Activate.ps1
+    ```
 
-```bash
-source .venv/bin/activate
-```
+    **MacOS or Linux:**
+
+    ```bash
+    source .venv/bin/activate
+    ```
 
 ## 1 Install Pytest
 
-In your virtual environment, type the command on Windows:
+1. Run the following command to install `pytest` in your virtual enviroment.
 
-```bash
-pip install pytest
-```
+    **Windows:**
 
-For MacOS and Linux:
+    ```powershell
+    pip install pytest
+    ```
 
-```bash
-pip3 install pytest
-```
+    **MacOS or Linux:**
+
+    ```bash
+    pip3 install pytest
+    ```
 
 ## 2 Create a Test File
 
-To create a test file, you must follow a specific naming scheme. it must begin with `test_` or end with `_test`.
+`pytest` testing files must follow a specific naming scheme. They must be begin with `test_` or end with `_test`.
 The file extension for your test file should be `.py`, because it is a python file. For these instruction we have provided example test files, and a test file you can edit, to write your own tests, as well as starter code.
 
-> [!WARNING]
-> **The Test file must be separate from your code file.**
+> [!IMPORTANT]
+> The Test file must be separate from your code file.
 
 ## 3 Write a Positive Test
 
