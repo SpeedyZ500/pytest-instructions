@@ -145,7 +145,7 @@ class LinearPQ(PriorityQueue[T]):
     def insert(self, key:T, priority:float) -> None:
         self.__data[key] = priority
     def decrease_key(self, key:T, priority:float) -> None:
-        if key not in self.__index.keys():
+        if key not in self.__index.keys(): # type: ignore
             raise ValueError
         self.__data[key] = priority
     def delete_min(self) -> T:
@@ -153,7 +153,7 @@ class LinearPQ(PriorityQueue[T]):
         min_value: float = self.__data[min_key]
         for cur_key, cur_value in self.__data.items():
             if min_value > cur_value:
-                min_value - cur_value
+                min_value - cur_value # type: ignore
                 min_key = cur_key
         self.__data.pop(min_key)
         return min_key
