@@ -263,10 +263,10 @@ The first positive test that you will implement is for the `remove_song` method 
 
 ### 6.2 Run a Positive Test
 
-1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the "Test Results" tab to see why the test failed.
-2. Open the "Test Results" tab located at the bottom of the screen.
-3. Select `test_remove_song_positive` from the list of tests.
-4. Look at the test output tab on the right side. The tab will explain why `test_remove_song_positive` failed.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the test output to see why the test failed.
+2. Open the `test_song_library.py` file.
+3. Click the red arrow to the right of `test_remove_song_positive`. The arrow will expand into the test output.
+4. Look at the test output. The output will explain why `test_remove_song_positive` failed.
 
     The error will look something like the following:
 
