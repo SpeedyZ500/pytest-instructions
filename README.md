@@ -301,6 +301,8 @@ The first negative test that you will implement is for the `remove_song` method 
     def test_remove_song_negative():
         song_library.clear()
         song_library.remove_song("The Unsung Song")
+
+        assert 0 == len(song_library.songs)
     ```
 
     The above test will

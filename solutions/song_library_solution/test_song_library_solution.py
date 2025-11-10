@@ -32,6 +32,8 @@ def test_remove_song_negative():
     song_library.clear()
     song_library.remove_song("The Unsung Song")
 
+    assert 0 == len(song_library.songs)
+
 # ======== get_songs_in_genre tests ========
 
 def test_get_songs_in_genre_positive():
