@@ -390,8 +390,31 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
 
 ### 8.2 Run Positive and Negative Tests
 
-> [!CAUTION]
-> This section has not been fully implemented yet.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. The `test_get_songs_in_genre_negative` test will pass, but `test_get_songs_in_genre_positive` will fail.
+2. Open the `test_song_library.py` file.
+3. Click the red arrow to the right of `test_get_songs_in_genre_positive`. The arrow will expand into the test output.
+4. Look at the test output. The output will explain why `test_get_songs_in_genre_positive` failed.
+
+    The error will look something like the following:
+
+    ```py
+    song_library.clear()
+            song_library.add_song(Song("We Built This City", "Rock"))
+            song_library.add_song(Song("Hello World", "Pop"))
+            song_library.add_song(Song("Take Me Home, Country Roads", "Country"))
+
+    >       assert 1 == len(song_library.get_songs_in_genre("Rock"))
+    E       assert 1 == 0
+    E        +  where 0 = len([])
+    E        +    where [] = get_songs_in_genre('Rock')
+    E        +      where get_songs_in_genre = Library(["We Built This City", "Hello World", "Take Me Home, Country Roads"]).get_songs_in_genre
+
+    demo\song_library\test_song_library_solution.py:45: AssertionError
+    ```
+
+    From these results, you can see that the test failure was caused by an `AssertionError` on line 45 of `song_library.py`. `song_library.get_songs_in_genre("Rock")` did not return any songs.
+
+Now that you can identify an error in the code, you can try to implement a fix for the error.
 
 ### 8.3 Implement Fixes
 
