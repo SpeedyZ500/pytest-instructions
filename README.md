@@ -152,8 +152,10 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
 
     def test_add_song_negative():
-        # TODO: Impelement
-        raise NotImplementedError
+        song_library.clear()
+
+        with pytest.raises(TypeError):
+            song_library.add_song(27) # type: ignore
 
     # ======== remove_song tests ========
 
