@@ -16,6 +16,7 @@ This instruction will guide you through step-by-step instructions of writing `py
     - [1.2 Activate your Virtual Environment](#12-activate-your-virtual-environment)
   - [2 Install Pytest](#2-install-pytest)
   - [3 Create a Test File](#3-create-a-test-file)
+  - [33 Implement `assert` and `pytest.raises`](#33-implement-assert-and-pytestraises)
   - [4 Run a Test File with `pytest`](#4-run-a-test-file-with-pytest)
     - [4.1 Configure Python Tests](#41-configure-python-tests)
     - [4.2 Run `pytest`](#42-run-pytest)
@@ -148,14 +149,10 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
     def test_add_song_positive():
         song_library.clear()
         song_library.add_song(Song("We Built This City", "Rock"))
-        assert 1 == len(song_library.songs)
 
 
     def test_add_song_negative():
         song_library.clear()
-
-        with pytest.raises(TypeError):
-            song_library.add_song(27) # type: ignore
 
     # ======== remove_song tests ========
 
@@ -180,7 +177,36 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
         raise NotImplementedError
     ```
 
-    This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The first test, `test_add_song_positive`, is already provided for you.
+    This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The starter code above provides nearly complete positive and negative tests for `add_song`.
+
+## 33 Implement `assert` and `pytest.raises`
+
+To assure test results are as expected, you will use two types of statements:
+
+- `assert` statements verify that a condition is true, and if not, an error is raised and the `pytest` test fails.
+- `pytest.raises` is a function in the `pytest` library that expects an error to be thrown from your testing methods. If the the method doesn't err or gives an unexpected error, the `pytest` test will fail.
+
+You will add an `assert` statement and a `pytest.raises` statement to the `add_song` tests to complete their implementation.
+
+1. Add the following line of code to the end of `test_add_song_positive`:
+
+    ```py
+    assert 1 == len(song_library.songs)
+    ```
+
+    This line will verify that the song `"We Built This City"` was actually added to the `SongLibrary` by checking its length. If the length of `song_library.songs` is `1`, the test will pass.
+
+2. Add the following lines of code to the end of `test_add_song_negative`:
+
+    ```py
+    with pytest.raises(TypeError):
+        song_library.add_song(27) # type: ignore
+    ```
+
+    This line will attend to add an input of the wrong type to the `SongLibrary` and expect a `TypeError` to be thrown. If a `TypeError` is thrown, the test will pass.
+
+    > [!TIP]
+    > Adding `# type: ignore` to a line of Python code will signal to the Python IntelliSense to ignore the intentional type error. This won't change the program output, but it keeps an error from appearing in the editor.
 
 ## 4 Run a Test File with `pytest`
 
@@ -202,7 +228,7 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
-    Notice that all of the tests except for `test_add_song_positive` will fail due to a `NotImplementedError` being thrown.
+    Notice that all of the tests except for `test_add_song_positive` and `test_add_song_negative` will fail due to a `NotImplementedError` being thrown.
 
     > [!NOTE]
     > A `NotImplementedError` in Python notes functionality that has not yet been fully implemented.
@@ -373,6 +399,8 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
 
 > [!CAUTION]
 > This section has not been fully implemented yet.
+
+<!---->
 
 ## 8 Write Test Classes
 
