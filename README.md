@@ -16,28 +16,23 @@ This instruction will guide you through step-by-step instructions of writing `py
     - [1.2 Activate your Virtual Environment](#12-activate-your-virtual-environment)
   - [2 Install Pytest](#2-install-pytest)
   - [3 Create a Test File](#3-create-a-test-file)
-  - [33 Implement `assert` and `pytest.raises`](#33-implement-assert-and-pytestraises)
-  - [4 Run a Test File with `pytest`](#4-run-a-test-file-with-pytest)
-    - [4.1 Configure Python Tests](#41-configure-python-tests)
-    - [4.2 Run `pytest`](#42-run-pytest)
-  - [5 Implement a Positive Test](#5-implement-a-positive-test)
-    - [5.1 Write a Positive Test](#51-write-a-positive-test)
-    - [5.2 Run a Positive Test](#52-run-a-positive-test)
-    - [5.3 Implement Fixes](#53-implement-fixes)
-  - [6 Implement a Negative Test](#6-implement-a-negative-test)
-    - [6.1 Write a Negative Test](#61-write-a-negative-test)
-    - [6.2 Run a Negative Test](#62-run-a-negative-test)
-  - [7 Implement Positive and Negative Tests](#7-implement-positive-and-negative-tests)
-    - [7.1 Write Positive and Negative Tests](#71-write-positive-and-negative-tests)
-    - [7.2 Run Positive and Negative Tests](#72-run-positive-and-negative-tests)
-    - [7.3 Implement Fixes](#73-implement-fixes)
-  - [8 Write Test Classes](#8-write-test-classes)
-  - [9 Add Fixtures](#9-add-fixtures)
-  - [10 Test Classes](#10-test-classes)
-    - [7.1 Write a Test Class](#71-write-a-test-class)
-    - [7.2 Write Tests Within a Class](#72-write-tests-within-a-class)
-  - [11 Parameterize Tests](#11-parameterize-tests)
-  - [12 ✍️ Practice](#12-️-practice)
+  - [4 Implement `assert` and `pytest.raises`](#4-implement-assert-and-pytestraises)
+  - [5 Run a Test File with `pytest`](#5-run-a-test-file-with-pytest)
+    - [5.1 Configure Python Tests](#51-configure-python-tests)
+    - [5.2 Run `pytest`](#52-run-pytest)
+  - [6 Implement a Positive Test](#6-implement-a-positive-test)
+    - [6.1 Write a Positive Test](#61-write-a-positive-test)
+    - [6.2 Run a Positive Test](#62-run-a-positive-test)
+    - [6.3 Implement Fixes](#63-implement-fixes)
+  - [7 Implement a Negative Test](#7-implement-a-negative-test)
+    - [7.1 Write a Negative Test](#71-write-a-negative-test)
+    - [7.2 Run a Negative Test](#72-run-a-negative-test)
+  - [8 Implement Positive and Negative Tests](#8-implement-positive-and-negative-tests)
+    - [8.1 Write Positive and Negative Tests](#81-write-positive-and-negative-tests)
+    - [8.2 Run Positive and Negative Tests](#82-run-positive-and-negative-tests)
+    - [8.3 Implement Fixes](#83-implement-fixes)
+  - [9 Review](#9-review)
+  - [10 ✍️ Practice](#10-️-practice)
 
 ## Prerequisites
 
@@ -179,7 +174,7 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
     This code tests positive (passing) and negative (failing) functionality of three `SongLibrary` methods: `add_song`, `remove_song`, and `get_songs_in_genre`. The starter code above provides nearly complete positive and negative tests for `add_song`.
 
-## 33 Implement `assert` and `pytest.raises`
+## 4 Implement `assert` and `pytest.raises`
 
 To assure test results are as expected, you will use two types of statements:
 
@@ -208,11 +203,11 @@ You will add an `assert` statement and a `pytest.raises` statement to the `add_s
     > [!TIP]
     > Adding `# type: ignore` to a line of Python code will signal to the Python IntelliSense to ignore the intentional type error. This won't change the program output, but it keeps an error from appearing in the editor.
 
-## 4 Run a Test File with `pytest`
+## 5 Run a Test File with `pytest`
 
 Now that you have created a test file, you can configure VS Code to discover and execute your tests.
 
-### 4.1 Configure Python Tests
+### 5.1 Configure Python Tests
 
 1. Open the Testing tab in VS Code.
 
@@ -224,7 +219,7 @@ Now that you have created a test file, you can configure VS Code to discover and
 
 VS Code is now configured to automatically discover any test files and tests in your root directory.
 
-### 4.2 Run `pytest`
+### 5.2 Run `pytest`
 
 1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
@@ -237,11 +232,11 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 Now that you can run `pytest`, you will implement a positive and negative test in `test_song_library.py`.
 
-## 5 Implement a Positive Test
+## 6 Implement a Positive Test
 
 Positive tests assert that programs function as expected given valid input.
 
-### 5.1 Write a Positive Test
+### 6.1 Write a Positive Test
 
 The first positive test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide valid inputs and assert that the method runs as expected.
 
@@ -263,7 +258,7 @@ The first positive test that you will implement is for the `remove_song` method 
     - remove a song named `"We Built This City"`.
     - assert that the testing `SongLibrary` is empty.
 
-### 5.2 Run a Positive Test
+### 6.2 Run a Positive Test
 
 1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the "Test Results" tab to see why the test failed.
 2. Open the "Test Results" tab located at the bottom of the screen.
@@ -297,7 +292,7 @@ The first positive test that you will implement is for the `remove_song` method 
 
 Now that you can identify an error in the code, you can try to implement a fix for the error.
 
-### 5.3 Implement Fixes
+### 6.3 Implement Fixes
 
 1. Open `song_library.py`.
 2. Locate the `remove_song` method in the `SongLibrary` class.
@@ -315,11 +310,11 @@ Now that you can identify an error in the code, you can try to implement a fix f
 
 You have created and implemented a positive test. The next section will instruct you in writing a test for testing program functionality with invalid inputs.
 
-## 6 Implement a Negative Test
+## 7 Implement a Negative Test
 
 Negative tests assert that programs function as expected given invalid or incorrect input.
 
-### 6.1 Write a Negative Test
+### 7.1 Write a Negative Test
 
 The first negative test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide incorrect input and assert that the method runs as expected.
 
@@ -338,15 +333,15 @@ The first negative test that you will implement is for the `remove_song` method 
     - run `clear` on the testing `SongLibrary` to remove songs left over from other tests.
     - assert no errors when removing a non-existent song `"The Unsung Song"`.
 
-### 6.2 Run a Negative Test
+### 7.2 Run a Negative Test
 
 1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_negative` succeeded. Because it succeeded, you will not have to implement any additional fixes in `remove_song`.
 
 You will now implement positive and negative tests for the `get_songs_in_genre` method and implement fixes.
 
-## 7 Implement Positive and Negative Tests
+## 8 Implement Positive and Negative Tests
 
-### 7.1 Write Positive and Negative Tests
+### 8.1 Write Positive and Negative Tests
 
 1. Replace `test_get_songs_in_genre_positive` with the following code:
 
@@ -390,17 +385,17 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
       - a `Country` song named `"Take Me Home, Country Roads"`
     - assert that the testing `SongLibrary` has no `Classical` songs.
 
-### 7.2 Run Positive and Negative Tests
+### 8.2 Run Positive and Negative Tests
 
 > [!CAUTION]
 > This section has not been fully implemented yet.
 
-### 7.3 Implement Fixes
+### 8.3 Implement Fixes
 
 > [!CAUTION]
 > This section has not been fully implemented yet.
 
-<!---->
+<!--
 
 ## 8 Write Test Classes
 
@@ -506,8 +501,21 @@ You may need to test several functions that are similar, perhaps they are two ch
 It is also possible to parameterize Fixtures, and it will behave in much the same way.
 
 For practice you could write tests for the PriorityQueue test class, using parameterization, and debugging to figure out why the HeapPQ fails a test that LinearPQ passes.
+-->
 
-## 12 ✍️ Practice
+## 9 Review
+
+Congratulations on reaching the end of this demo instruction! In this instruction, you
+
+- created and set up a virtual environment with test `pytest` framework
+- created a `pytest` test file and ran the tests
+- implemented `assert` and `pytest.raises` statements
+- implemented positive and negative tests
+- used tests to fix errors in code
+
+For additional practice, refer to the assignment below.
+
+## 10 ✍️ Practice
 
 > [!CAUTION]
 > This section has not been fully implemented yet.
