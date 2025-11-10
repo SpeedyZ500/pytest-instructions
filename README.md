@@ -318,7 +318,7 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
 
 ### 7.1 Write Positive and Negative Tests
 
-1. Replace `test_remove_song_positive` with the following code:
+1. Replace `test_get_songs_in_genre_positive` with the following code:
 
     ```py
     def test_get_songs_in_genre_positive():
@@ -339,7 +339,7 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
       - a `Country` song named `"Take Me Home, Country Roads"`
     - assert that the testing `SongLibrary` has one `Rock` song.
 
-2. Replace `test_remove_song_negative` with the following code:
+2. Replace `test_get_songs_in_genre_negative` with the following code:
 
     ```py
     def test_get_songs_in_genre_negative():
