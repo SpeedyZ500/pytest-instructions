@@ -61,8 +61,9 @@ We will be using a virtual Python environment called `venv` to ensure consistent
 
 1. Open a command terminal in your project folder.
 
-    > [!NOTE]
-    > Any standard command terminal such as Powershell or Bash will work for this demo.
+> [!NOTE]
+> Any standard command terminal such as Powershell or Bash will work for this demo.
+
 2. Run the following command to set up `venv` on your machine.
 
     **Windows:**
@@ -200,8 +201,8 @@ You will add an `assert` statement and a `pytest.raises` statement to the `add_s
 
     This line will attend to add an input of the wrong type to the `SongLibrary` and expect a `TypeError` to be thrown. If a `TypeError` is thrown, the test will pass.
 
-    > [!TIP]
-    > Adding `# type: ignore` to a line of Python code will signal to the Python IntelliSense to ignore the intentional type error. This won't change the program output, but it keeps an error from appearing in the editor.
+> [!TIP]
+> Adding `# type: ignore` to a line of Python code will signal to the Python IntelliSense to ignore the intentional type error. This won't change the program output, but it keeps an error from appearing in the editor.
 
 ## 5 Run a Test File with `pytest`
 
@@ -211,14 +212,14 @@ Now that you have created a test file, you can configure VS Code to discover and
 
 1. Open the Testing tab in VS Code.
 
-    > [!IMPORTANT]  
-    > The Testing tab is located on the left side of the screen.
+> [!IMPORTANT]  
+> The Testing tab is located on the left side of the screen.
 2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
 3. Select `pytest` as the enabled testing framework.
 4. Select the demo directory `demo` as the test directory.
 
-    > [!IMPORTANT]
-    > If you want to change a test directory for `pytest`, you can navigate to `.vscode/settings.json` and switch the value in `"python.testing.pytestArgs"` from `demo` to your chosen folder. To run `pytest` tests on all folders in the repository, set the test directory to `.`, the root directory.
+> [!IMPORTANT]
+> If you want to change a test directory for `pytest`, you can navigate to `.vscode/settings.json` and switch the value in `"python.testing.pytestArgs"` from `demo` to your chosen folder. To run `pytest` tests on all folders in the repository, set the test directory to `.`, the root directory.
 
 VS Code is now configured to automatically discover any test files and tests in your demo directory.
 
@@ -228,10 +229,10 @@ VS Code is now configured to automatically discover any test files and tests in 
 
     Notice that all of the tests except for `test_add_song_positive` and `test_add_song_negative` will fail due to a `NotImplementedError` being thrown.
 
-    > [!NOTE]
-    > A `NotImplementedError` in Python notes functionality that has not yet been fully implemented.
-    >
-    > In this instruction, you will be replacing the occurences of `NotImplementedError` with code to debug `SongLibrary`.
+> [!NOTE]
+> A `NotImplementedError` in Python notes functionality that has not yet been fully implemented.
+>
+> In this instruction, you will be replacing the occurences of `NotImplementedError` with code to debug `SongLibrary`.
 
 Now that you can run `pytest`, you will implement a positive and negative test in `test_song_library.py`.
 
