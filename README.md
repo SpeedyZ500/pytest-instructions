@@ -227,12 +227,10 @@ Now that you have created a test file, you can configure VS Code to discover and
 
 > [!IMPORTANT]  
 > The button to access the Testing tab is located on the Activity Bar on left side of the screen.
-> The icon for the Testing tab is a beaker, shown below:
->
-> ![Testing tab beaker icon](image.png)
-2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
-3. Select `pytest` as the enabled testing framework.
-4. Select the demo directory `demo` as the test directory.
+> The icon for the Testing tab is a beaker (![Testing tab beaker icon](images/testing_tab_icon.png)).
+1. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
+2. Select `pytest` as the enabled testing framework.
+3. Select the demo directory `demo` as the test directory.
 
 > [!IMPORTANT]
 > If you want to change a test directory for `pytest`, you can navigate to `.vscode/settings.json` and switch the value in `"python.testing.pytestArgs"` from `demo` to your chosen folder. To run `pytest` tests on all folders in the repository, set the test directory to `.`, the root directory.
@@ -241,7 +239,7 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 ### 5.2 Run `pytest`
 
-1. Press the "Run Tests" button in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
+1. Press the "Run Tests" button (![Testing tab Run Tests button icon](images/run_tests_button.png)) in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
     Notice that all of the tests except for `test_add_song_positive` and `test_add_song_negative` will fail due to a `NotImplementedError` being thrown.
 
