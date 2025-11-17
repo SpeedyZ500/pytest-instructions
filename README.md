@@ -226,7 +226,10 @@ Now that you have created a test file, you can configure VS Code to discover and
 1. Open the Testing tab in VS Code.
 
 > [!IMPORTANT]  
-> The Testing tab is located on the left side of the screen.
+> The button to access the Testing tab is located on the Activity Bar on left side of the screen.
+> The icon for the Testing tab is a beaker, shown below:
+>
+> ![Testing tab beaker icon](image.png)
 2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
 3. Select `pytest` as the enabled testing framework.
 4. Select the demo directory `demo` as the test directory.
