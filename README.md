@@ -48,7 +48,11 @@ This repository contains the starter code for this instruction. You will be debu
     git clone https://github.com/SpeedyZ500/pytest-instructions.git
     ```
 
-2. Open the repository in VS Code.
+2. Run the following command to open the repository in VS Code.
+
+    ```bash
+    code pytest-instructions
+    ```
 
 ## 1 Create a Virtual Environment
 
