@@ -10,6 +10,7 @@ This instruction will guide you through step-by-step instructions of writing `py
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
+  - [Why learn `pytest`?](#why-learn-pytest)
   - [0 Download the Starter Code](#0-download-the-starter-code)
   - [1 Create a Virtual Environment](#1-create-a-virtual-environment)
     - [1.1 Setup the Virtual Environment](#11-setup-the-virtual-environment)
@@ -39,6 +40,10 @@ This instruction will guide you through step-by-step instructions of writing `py
 - You should have [Visual Studio Code](https://code.visualstudio.com/) installed already.
 - You should have [Python](https://www.python.org/downloads/) installed on your system.
 - You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
+
+## Why learn `pytest`?
+
+`pytest` is a Python library that helps programmers create, execute, and debug tests for their code. Tests are programs that execute parts of your main program to assert that they are working correctly. This technique gives programmers confidence that their code not only does not throw unexpected errors, but that it does not return unexpected results.
 
 ## 0 Download the Starter Code
 
@@ -77,9 +82,9 @@ A good practice for creating a testing environment is to account for variability
 > 1. In the menu bar at the top of VS Code, click `Terminal` > `New Terminal`.
 > 2. Or, use the keyboard shortcut <kbd>Ctrl</kbd> + <kbd>`</kbd>.
 >
-> Any standard command terminal such as Powershell or Bash will work for this demo.
+> Any standard command terminal such as PowerShell or Bash will work for this demo.
 
-1. Run the following command in VS Code to set up `venv` on your machine.
+2. Run the following command in VS Code to set up `venv` on your machine.
 
     **Windows:**
 
@@ -118,7 +123,7 @@ You now have to tell VS Code that you want to use the virtual environment. This 
 > [!NOTE]
 > If you are are following these instructions on Windows, running the above command may result in an error
 > saying that "execution of scripts is disabled on this system." This is because the command that activates
-> the virtual environment runs a series of Powershell commands that sets up the virtual environment.
+> the virtual environment runs a series of PowerShell commands that sets up the virtual environment.
 >
 > If this error occurs, follow [these instructions](https://easyentra.com/running-scripts-is-disabled-on-this-system/) to allow the execution of scripts on your Windows system, and then re-run the above command.
 
@@ -243,9 +248,9 @@ Now that you have created a test file, you can configure VS Code to discover and
 > [!IMPORTANT]  
 > The button to access the Testing tab is located on the Activity Bar on left side of the screen.
 > The icon for the Testing tab is a beaker (![Testing tab beaker icon](images/testing_tab_icon.png)).
-1. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
-2. Select `pytest` as the enabled testing framework.
-3. Select the demo directory `demo` as the test directory.
+2. Press the "Configure Python Tests" button. A dropdown menu will appear at the top of the screen.
+3. Select `pytest` as the enabled testing framework.
+4. Select the demo directory `demo` as the test directory.
 
 > [!IMPORTANT]
 > If you want to change a test directory for `pytest`, you can navigate to `.vscode/settings.json` and switch the value in `"python.testing.pytestArgs"` from `demo` to your chosen folder. To run `pytest` tests on all folders in the repository, set the test directory to `.`, the root directory.
@@ -451,6 +456,23 @@ Now that you can identify an error in the code, you can try to implement a fix f
 > [!CAUTION]
 > This section has not been fully implemented yet.
 
+## 9 Review
+
+Congratulations on reaching the end of this demo instruction! In this instruction, you
+
+- created and set up a virtual environment with test `pytest` framework
+- created a `pytest` test file and ran the tests
+- implemented `assert` and `pytest.raises` statements
+- implemented positive and negative tests
+- used tests to fix errors in code
+
+For additional practice, refer to the assignment below.
+
+## 10 ✍️ Practice
+
+> [!CAUTION]
+> This section has not been fully implemented yet.
+
 <!--
 
 ## 8 Write Test Classes
@@ -558,20 +580,3 @@ It is also possible to parameterize Fixtures, and it will behave in much the sam
 
 For practice you could write tests for the PriorityQueue test class, using parameterization, and debugging to figure out why the HeapPQ fails a test that LinearPQ passes.
 -->
-
-## 9 Review
-
-Congratulations on reaching the end of this demo instruction! In this instruction, you
-
-- created and set up a virtual environment with test `pytest` framework
-- created a `pytest` test file and ran the tests
-- implemented `assert` and `pytest.raises` statements
-- implemented positive and negative tests
-- used tests to fix errors in code
-
-For additional practice, refer to the assignment below.
-
-## 10 ✍️ Practice
-
-> [!CAUTION]
-> This section has not been fully implemented yet.
