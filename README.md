@@ -475,7 +475,7 @@ Now that you can identify an error in the code, you can try to implement a fix f
     self.songs[i].genre == genre
     ```
 
-4. Press the "Run Tests" button in the Testing tab to re-run all tests. All tests are now passing.
+4. Press the "Run Tests" button in the Testing tab to re-run all tests. All tests in `test_song_library.py` will now be passing.
 
 ## 9 Review
 
