@@ -216,7 +216,7 @@ You will add an `assert` statement and a `pytest.raises` statement to the `add_s
 
     ```py
     with pytest.raises(TypeError):
-        song_library.add_song(27) # type: ignore
+        song_library.add_song(67) # type: ignore
     ```
 
     This line will attend to add an input of the wrong type to the `SongLibrary` and expect a `TypeError` to be thrown. If a `TypeError` is thrown, the test will pass.
