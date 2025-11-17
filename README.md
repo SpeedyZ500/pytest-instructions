@@ -321,7 +321,7 @@ The first positive test that you will implement is for the `remove_song` method 
     song_library\song_library.py:38: ValueError
     ```
 
-    From these results, you can see that the test failure was caused by a `ValueError` on line 38 of `song_library.py`.
+    From these results, you can see that the test failure was caused by a `ValueError` in of `song_library.py`.
 
 Now that you can identify an error in the code, you can try to implement a fix for the error.
 
@@ -330,10 +330,10 @@ Now that you can identify an error in the code, you can try to implement a fix f
 1. Open `song_library.py`.
 2. Locate the `remove_song` method in the `SongLibrary` class.
 
-    Line 38, which raised a `ValueError`, is intended to remove the `Song` from `SongLibrary` at index `i`. This line calls `songs.remove`. The `remove` method on `songs` removes a `Song` that matches an input value to `remove`. However, this line is intended to remove a song based on its index, not its value.
+    The line which raised a `ValueError` is intended to remove the `Song` from `SongLibrary` at index `i`. This line calls `songs.remove`. The `remove` method on `songs` removes a `Song` that matches an input value to `remove`. However, this line is intended to remove a song based on its index, not its value.
 
     The correct method, then, is `songs.pop`, which removes `Song` elements based on index.
-3. Replace line 38 of `song_library.py` with
+3. Replace the `self.songs.remove(i)` line of `song_library.py` with
 
     ```py
     self.songs.pop(i)
@@ -442,7 +442,7 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
     demo\song_library\test_song_library_solution.py:45: AssertionError
     ```
 
-    From these results, you can see that the test failure was caused by an `AssertionError` on line 45 of `song_library.py`. `song_library.get_songs_in_genre("Rock")` did not return any songs.
+    From these results, you can see that the test failure was caused by an `AssertionError` in `song_library.py`. `song_library.get_songs_in_genre("Rock")` did not return any songs.
 
 Now that you can identify an error in the code, you can try to implement a fix for the error.
 
