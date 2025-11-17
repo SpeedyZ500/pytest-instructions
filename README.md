@@ -56,7 +56,7 @@ This repository contains the starter code for this instruction. You will be debu
 
 ## 1 Create a Virtual Environment
 
-We will be using a virtual Python environment called `venv` to ensure consistent Python behavior across operating systems.
+A good practice for creating a testing environment is to account for variability of python operation across different operating systems. In this demo, you will be using a virtual Python environment called `venv` to ensure consistent Python behavior across operating systems.
 
 > [!NOTE]
 > If you already have a virtual environment set up, skip to section 1.
