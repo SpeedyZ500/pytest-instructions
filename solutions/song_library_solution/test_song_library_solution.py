@@ -5,14 +5,15 @@ song_library = SongLibrary()
 
 # ======== add_song tests ========
 
-def test_add_song_positive():
+# 🟢 Positive Test
+def test_add_valid_song():
     song_library.clear()
     song_library.add_song(Song("We Built This City", "Rock"))
 
     assert 1 == len(song_library.songs)
 
-
-def test_add_song_negative():
+# 🔴 Negative Test
+def test_add_invalid_song():
     song_library.clear()
 
     with pytest.raises(TypeError):
@@ -20,15 +21,16 @@ def test_add_song_negative():
 
 # ======== remove_song tests ========
 
-def test_remove_song_positive():
+# 🟢 Positive Test
+def test_remove_present_song():
     song_library.clear()
     song_library.add_song(Song("We Built This City", "Rock"))
     song_library.remove_song("We Built This City")
 
     assert 0 == len(song_library.songs)
 
-
-def test_remove_song_negative():
+# 🔴 Negative Test
+def test_remove_absent_song():
     song_library.clear()
     song_library.remove_song("The Unsung Song")
 
@@ -36,7 +38,8 @@ def test_remove_song_negative():
 
 # ======== get_songs_in_genre tests ========
 
-def test_get_songs_in_genre_positive():
+# 🟢 Positive Test
+def test_get_present_song_in_genre():
     song_library.clear()
     song_library.add_song(Song("We Built This City", "Rock"))
     song_library.add_song(Song("Hello World", "Pop"))
@@ -44,8 +47,8 @@ def test_get_songs_in_genre_positive():
 
     assert 1 == len(song_library.get_songs_in_genre("Rock"))
 
-
-def test_get_songs_in_genre_negative():
+# 🔴 Negative Test
+def test_get_absent_song_in_genre():
     song_library.clear()
     song_library.add_song(Song("We Built This City", "Rock"))
     song_library.add_song(Song("Hello World", "Pop"))

@@ -171,33 +171,36 @@ To verify that `SongLibrary` is working as expected, this instruction will walk 
 
     # ======== add_song tests ========
 
-    def test_add_song_positive():
+    # 🟢 Positive Test
+    def test_add_valid_song():
         song_library.clear()
         song_library.add_song(Song("We Built This City", "Rock"))
 
-
-    def test_add_song_negative():
+    # 🔴 Negative Test
+    def test_add_invalid_song():
         song_library.clear()
 
     # ======== remove_song tests ========
 
-    def test_remove_song_positive():
+    # 🟢 Positive Test
+    def test_remove_present_song():
         # TODO: Impelement
         raise NotImplementedError
 
-
-    def test_remove_song_negative():
+    # 🔴 Negative Test
+    def test_remove_absent_song():
         # TODO: Impelement
         raise NotImplementedError
 
     # ======== get_songs_in_genre tests ========
 
-    def test_get_songs_in_genre_positive():
+    # 🟢 Positive Test
+    def test_get_present_song_in_genre():
         # TODO: Impelement
         raise NotImplementedError
 
-
-    def test_get_songs_in_genre_negative():
+    # 🔴 Negative Test
+    def test_get_absent_song_in_genre():
         # TODO: Impelement
         raise NotImplementedError
     ```
@@ -213,7 +216,7 @@ To assure test results are as expected, you will use two types of statements:
 
 You will add an `assert` statement and a `pytest.raises` statement to the `add_song` tests to complete their implementation.
 
-1. Add the following line of code to the end of `test_add_song_positive`:
+1. Add the following line of code to the end of `test_add_valid_song`:
 
     ```py
     assert 1 == len(song_library.songs)
@@ -221,7 +224,7 @@ You will add an `assert` statement and a `pytest.raises` statement to the `add_s
 
     This line will verify that the song `"We Built This City"` was actually added to the `SongLibrary` by checking its length. If the length of `song_library.songs` is `1`, the test will pass.
 
-2. Add the following lines of code to the end of `test_add_song_negative`:
+2. Add the following lines of code to the end of `test_add_invalid_song`:
 
     ```py
     with pytest.raises(TypeError):
@@ -261,7 +264,7 @@ VS Code is now configured to automatically discover any test files and tests in 
 
 1. Press the "Run Tests" button (![Testing tab Run Tests button icon](images/run_tests_button.png)) in the Testing tab. This will run the `SongLibrary` tests you added in the previous section.
 
-    Notice that all of the tests except for `test_add_song_positive` and `test_add_song_negative` will fail due to a `NotImplementedError` being thrown.
+    Notice that all of the tests except for `test_add_valid_song` and `test_add_invalid_song` will fail due to a `NotImplementedError` being thrown.
 
 > [!NOTE]
 > A `NotImplementedError` in Python notes functionality that has not yet been fully implemented.
@@ -278,10 +281,10 @@ Positive tests assert that programs function as expected given valid input.
 
 The first positive test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide valid inputs and assert that the method runs as expected.
 
-1. Replace `test_remove_song_positive` with the following code:
+1. Replace `test_remove_present_song` with the following code:
 
     ```py
-    def test_remove_song_positive():
+    def test_remove_present_song():
         song_library.clear()
         song_library.add_song(Song("We Built This City", "Rock"))
         song_library.remove_song("We Built This City")
@@ -298,10 +301,10 @@ The first positive test that you will implement is for the `remove_song` method 
 
 ### 6.2 Run a Positive Test
 
-1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_song_positive` is now implemented, it will still fail. You will check the test output to see why the test failed.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. Even though `test_remove_present_song` is now implemented, it will still fail. You will check the test output to see why the test failed.
 2. Open the `test_song_library.py` file.
-3. Click the red arrow to the right of `test_remove_song_positive`. The arrow will expand into the test output.
-4. Look at the test output. The output will explain why `test_remove_song_positive` failed.
+3. Click the red arrow to the right of `test_remove_present_song`. The arrow will expand into the test output.
+4. Look at the test output. The output will explain why `test_remove_present_song` failed.
 
     The error will look something like the following:
 
@@ -344,7 +347,7 @@ Now that you can identify an error in the code, you can try to implement a fix f
     self.songs.pop(i)
     ```
 
-4. Press the "Run Tests" button in the Testing tab to re-run all tests. `test_remove_song_positive` is now passing.
+4. Press the "Run Tests" button in the Testing tab to re-run all tests. `test_remove_present_song` is now passing.
 
 You have created and implemented a positive test. The next section will instruct you in writing a test for testing program functionality with invalid inputs.
 
@@ -356,10 +359,10 @@ Negative tests assert that programs function as expected given invalid or incorr
 
 The first negative test that you will implement is for the `remove_song` method in `SongLibrary`. It will provide incorrect input and assert that the method runs as expected.
 
-1. Replace `test_remove_song_negative` with the following code:
+1. Replace `test_remove_absent_song` with the following code:
 
     ```py
-    def test_remove_song_negative():
+    def test_remove_absent_song():
         song_library.clear()
         song_library.remove_song("The Unsung Song")
 
@@ -373,7 +376,7 @@ The first negative test that you will implement is for the `remove_song` method 
 
 ### 7.2 Run a Negative Test
 
-1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_song_negative` succeeded. Because it succeeded, you will not have to implement any additional fixes in `remove_song`.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. The Testing tab will show that `test_remove_absent_song` succeeded. Because it succeeded, you will not have to implement any additional fixes in `remove_song`.
 
 You will now implement positive and negative tests for the `get_songs_in_genre` method and implement fixes.
 
@@ -381,10 +384,10 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
 
 ### 8.1 Write Positive and Negative Tests
 
-1. Replace `test_get_songs_in_genre_positive` with the following code:
+1. Replace `test_get_present_song_in_genre` with the following code:
 
     ```py
-    def test_get_songs_in_genre_positive():
+    def test_get_present_song_in_genre():
         song_library.clear()
         song_library.add_song(Song("We Built This City", "Rock"))
         song_library.add_song(Song("Hello World", "Pop"))
@@ -402,10 +405,10 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
       - a `Country` song named `"Take Me Home, Country Roads"`
     - assert that the testing `SongLibrary` has one `Rock` song.
 
-2. Replace `test_get_songs_in_genre_negative` with the following code:
+2. Replace `test_get_absent_song_in_genre` with the following code:
 
     ```py
-    def test_get_songs_in_genre_negative():
+    def test_get_absent_song_in_genre():
         song_library.clear()
         song_library.add_song(Song("We Built This City", "Rock"))
         song_library.add_song(Song("Hello World", "Pop"))
@@ -425,10 +428,10 @@ You will now implement positive and negative tests for the `get_songs_in_genre` 
 
 ### 8.2 Run Positive and Negative Tests
 
-1. Press the "Run Tests" button in the Testing tab to re-run all tests. The `test_get_songs_in_genre_negative` test will pass, but `test_get_songs_in_genre_positive` will fail.
+1. Press the "Run Tests" button in the Testing tab to re-run all tests. The `test_get_absent_song_in_genre` test will pass, but `test_get_present_song_in_genre` will fail.
 2. Open the `test_song_library.py` file.
-3. Click the red arrow to the right of `test_get_songs_in_genre_positive`. The arrow will expand into the test output.
-4. Look at the test output. The output will explain why `test_get_songs_in_genre_positive` failed.
+3. Click the red arrow to the right of `test_get_present_song_in_genre`. The arrow will expand into the test output.
+4. Look at the test output. The output will explain why `test_get_present_song_in_genre` failed.
 
     The error will look something like the following:
 
