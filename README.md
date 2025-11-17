@@ -1,4 +1,4 @@
-# Pytest Demo Instructions
+# Instructions for Creating and Using a Basic `pytest` Demo in VS Code
 
 ## Introduction
 
@@ -6,7 +6,7 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 ## Table of Contents
 
-- [Pytest Demo Instructions](#pytest-demo-instructions)
+- [Instructions for Creating and Using a Basic `pytest` Demo in VS Code](#instructions-for-creating-and-using-a-basic-pytest-demo-in-vs-code)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
