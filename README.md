@@ -39,7 +39,7 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 - You should have [Visual Studio Code](https://code.visualstudio.com/) installed already.
 - You should have [Python](https://www.python.org/downloads/) installed on your system.
-- You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
+- You should have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
 
 ## Why learn `pytest`?
 
@@ -456,8 +456,26 @@ Now that you can identify an error in the code, you can try to implement a fix f
 
 ### 8.3 Implement Fixes
 
-> [!CAUTION]
-> This section has not been fully implemented yet.
+1. Open `song_library.py`.
+2. Locate the `get_songs_in_genre` method in the `SongLibrary` class.
+
+    The `AssertionError` reveals that the `get_songs_in_genre` method is not working correctly, but it doesn't give specific detail on the source of the bug. If you look at the contents of the method, you will see the following loop in the code, designed to compare the `genre` of songs in the `SongLibrary` with the provided `genre`.
+
+    ```py
+    for i in range(len(self.songs)):
+    if self.songs[i].name == genre:
+        genre_songs.append(self.songs[i])
+    ```
+
+    Notice that the `if` statement compares the `genre` parameter with the `name` of each `Song` instead of the `genre` of each `Song`. The fix for this error would be to reference the `genre` of each `Song`.
+
+3. Replace the expression `self.songs[i].name == genre` in `song_library.py` with
+
+    ```py
+    self.songs[i].genre == genre
+    ```
+
+4. Press the "Run Tests" button in the Testing tab to re-run all tests. All tests are now passing.
 
 ## 9 Review
 
@@ -473,8 +491,8 @@ For additional practice, refer to the assignment below.
 
 ## 10 ✍️ Practice
 
-> [!CAUTION]
-> This section has not been fully implemented yet.
+> [!NOTE]
+> The practice section of this instruction has not yet been implemented. This is because the authors of this instruction, at the time of writing, are currently working on other computer science coursework. Also, this section is open-ended rather than step-by-step and is therefore not a part of the technical instruction.
 
 <!--
 
