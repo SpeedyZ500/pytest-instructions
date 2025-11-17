@@ -48,6 +48,10 @@ This repository contains the starter code for this instruction. You will be debu
     git clone https://github.com/SpeedyZ500/pytest-instructions.git
     ```
 
+> [!TIP]
+> You can copy-and-paste the commands and code snippets in this demo to ensure that your commands
+> and code snippets match these instructions exactly.
+
 2. Run the following command to open the repository in VS Code.
 
     ```bash
