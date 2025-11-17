@@ -111,6 +111,8 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     source .venv/bin/activate
     ```
 
+    You will know that the virtual environment has been successfully activated when you see `(.venv)` on the next line of the terminal.
+
 > [!NOTE]
 > If you are are following these instructions on Windows, running the above command may result in an error
 > saying that "execution of scripts is disabled on this system." This is because the command that activates
