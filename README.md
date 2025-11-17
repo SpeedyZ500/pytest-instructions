@@ -111,6 +111,13 @@ You now have to tell VS Code that you want to use the virtual environment. This 
     source .venv/bin/activate
     ```
 
+> [!NOTE]
+> If you are are following these instructions on Windows, running the above command may result in an error
+> saying that "execution of scripts is disabled on this system." This is because the command that activates
+> the virtual environment runs a series of Powershell commands that sets up the virtual environment.
+>
+> If this error occurs, follow [these instructions](https://easyentra.com/running-scripts-is-disabled-on-this-system/) to allow the execution of scripts on your Windows system, and then re-run the above command.
+
 ## 2 Install Pytest
 
 1. Run the following command to install `pytest` in your virtual enviroment.
