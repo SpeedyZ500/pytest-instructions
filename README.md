@@ -221,6 +221,10 @@ You will add an `assert` statement and a `pytest.raises` statement to the `add_s
 
     This line will attend to add an input of the wrong type to the `SongLibrary` and expect a `TypeError` to be thrown. If a `TypeError` is thrown, the test will pass.
 
+> [!IMPORTANT]
+> Copy-and-pasting may accidentally remove the indent before the line `song_library.add_song(67) # type: ignore`.
+> If this occured, make sure to add the indent back where you pasted the line in `test_son_library.py`.
+
 > [!TIP]
 > Adding `# type: ignore` to a line of Python code will signal to the Python IntelliSense to ignore the intentional type error. This won't change the program output, but it keeps an error from appearing in the editor.
 
