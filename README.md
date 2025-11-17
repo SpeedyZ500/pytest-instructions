@@ -36,7 +36,9 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 ## Prerequisites
 
-For this demo, you should have [Visual Studio Code](https://code.visualstudio.com/) installed already. You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
+- You should have [Visual Studio Code](https://code.visualstudio.com/) installed already.
+- You should have [Python](https://www.python.org/downloads/) installed on your system.
+- You should also have the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installed; this extension comes with support for integrading the IDE with the `pytest` framework.
 
 ## 0 Download the Starter Code
 
