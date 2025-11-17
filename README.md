@@ -67,12 +67,17 @@ A good practice for creating a testing environment is to account for variability
 
 ### 1.1 Setup the Virtual Environment
 
-1. Open a command terminal in your project folder.
+1. Open a command terminal in your project folder in VS Code.
 
-> [!NOTE]
+> [!IMPORTANT]
+>
+> You can open a command terminal in VS Code several ways.
+> 1. In the menu bar at the top of VS Code, click `Terminal` > `New Terminal`.
+> 2. Or, use the keyboard shortcut <kbd>Ctrl</kbd> + <kbd>`</kbd>.
+>
 > Any standard command terminal such as Powershell or Bash will work for this demo.
 
-2. Run the following command to set up `venv` on your machine.
+1. Run the following command in VS Code to set up `venv` on your machine.
 
     **Windows:**
 
