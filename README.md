@@ -6,7 +6,7 @@ This instruction will guide you through step-by-step instructions of writing `py
 
 ## Table of Contents
 
-- [Instructions for using the `pytest` Python library to create, execute, and debug code tests for a `pytest` demo in VS Code](#instructions-for-using-the-pytest-python-library-to-create-execute-and-debug-code-tests-for-a-pytest-demo-in-vs-code)
+- [Instructions for debugging a demo using `pytest` Python library basics in VS Code](#instructions-for-debugging-a-demo-using-pytest-python-library-basics-in-vs-code)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
