@@ -1,4 +1,4 @@
-# Instructions for using the basics of the `pytest` Python library to debug a demo project in VS Code
+# Instructions for debugging a demo using `pytest` Python library basics in VS Code
 
 ## Introduction
 
